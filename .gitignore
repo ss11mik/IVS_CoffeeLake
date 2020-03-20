@@ -2,7 +2,7 @@
 # Default ignored files
 /workspace.xml
 .idea/workspace.xml
-.gradle\5.2.1\javaCompile
-.gradle\5.2.1\fileHashes
-.gradle\buildOutputCleanup
-.gradle\5.2.1\executionHistory
+.gradle/5.2.1/javaCompile/
+.gradle/5.2.1/fileHashes/
+.gradle/buildOutputCleanup/
+.gradle/5.2.1/executionHistory/
