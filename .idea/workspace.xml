@@ -36,6 +36,15 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
   </component>
+  <component name="RunManager">
+    <configuration name="project2" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="project2.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -50,9 +59,37 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="414" y="195" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584709240179">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="414" y="195" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1584709240179" />
+    <state x="689" y="324" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1584709124834">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="689" y="324" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1584709124834" />
     <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1584707279819">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1584707279819" />
+    <state width="1877" height="202" key="GridCell.Tab.0.bottom" timestamp="1584709269848">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="202" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1584709269848" />
+    <state width="1877" height="202" key="GridCell.Tab.0.center" timestamp="1584709269848">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="202" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1584709269848" />
+    <state width="1877" height="202" key="GridCell.Tab.0.left" timestamp="1584709269848">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="202" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1584709269848" />
+    <state width="1877" height="202" key="GridCell.Tab.0.right" timestamp="1584709269848">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="202" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1584709269848" />
+    <state x="656" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1584708767697">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="656" y="364" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1584708767697" />
   </component>
 </project>
