@@ -1,8 +1,29 @@
-@ -1,2 +0,0 @@
-# Default ignored files
-/workspace.xml
-.idea/workspace.xml
-.gradle/5.2.1/javaCompile/
-.gradle/5.2.1/fileHashes/
-.gradle/buildOutputCleanup/
-.gradle/5.2.1/executionHistory/
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app

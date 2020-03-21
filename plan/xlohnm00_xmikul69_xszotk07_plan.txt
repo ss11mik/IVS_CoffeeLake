@@ -1,0 +1,42 @@
+Termíny:
+	-zprovoznění IDE a repozitáře u všech členů týmu
+		18/03/20 X
+	-dokončení testů pro TDD
+		25/03/20
+	-dokončení prací na funkcionalitách
+		15/04/20
+
+
+Přidělení úkolů:
+	Marek Lohn:
+		-vedoucí
+		-frontend
+		-debugging
+		-mockup
+
+	René Szotkowski:
+		-dokumentace
+		-manuál
+		-Makefile
+		-testy pro TDD
+		-mockup
+
+	Ondřej Mikula:
+		-bussiness logic
+		-instalátor
+		-mockup
+		-profiling
+		-testování ve VirtualBoxu
+
+Komunikační kanály:
+	-Discord
+	-SMS
+
+Pravidla pro komunikaci:
+	-každý pátek dopoledne každý podá report do dedikované roomky na Discordu
+	-dodržování konvence pro komentáře v git commitech
+
+Systém pro správu verzí: git
+
+Hosting: github
+
