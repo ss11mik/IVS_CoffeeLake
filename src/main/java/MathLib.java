@@ -1,5 +1,28 @@
 public class MathLib {
 
+    public static double calculate (double a, double b, int operation) {
+        switch (operation) {
+            case Operations.ADD:
+                return add(a, b);
+            case Operations.SUB:
+                return sub(a, b);
+            case Operations.MUL:
+                return multiply(a, b);
+            case Operations.DIV:
+                return divide(a, b);
+            case Operations.SQRT:
+                return sqrt(a, b);
+            case Operations.FACT:
+                return fact((long) b);
+            case Operations.POW:
+                return pow((long) a, (long) b);
+            case Operations.MOD:
+                return mod(a, b);
+            default:
+                return b;
+        }
+    }
+
     public static double add (double a, double b) {
         return a + b;
     }
