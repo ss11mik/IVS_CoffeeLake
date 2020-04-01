@@ -1,3 +1,5 @@
+package cz.vutbr.fit.ivs;
+
 import javax.swing.*;
 
 public class Main {

@@ -1,3 +1,5 @@
+package cz.vutbr.fit.ivs;
+
 public class Operations {
     public static final int NONE = -1;
     public static final int ADD = 0;

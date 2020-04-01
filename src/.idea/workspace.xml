@@ -7,6 +7,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -20,6 +27,10 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -35,9 +46,25 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="656" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1584880501246">
+    <state x="599" y="227" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog" timestamp="1585752042357">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="656" y="364" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1584880501246" />
+    <state x="599" y="227" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585752042357" />
+    <state x="808" y="429" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1585758543095">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="808" y="429" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585758543095" />
+    <state x="761" y="362" key="FileChooserDialogImpl" timestamp="1585758480509">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="761" y="362" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1585758480509" />
+    <state x="461" y="182" key="SettingsEditor" timestamp="1585758563563">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="461" y="182" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1585758563563" />
+    <state x="656" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1585758641878">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="656" y="364" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585758641878" />
   </component>
 </project>

@@ -1,3 +1,5 @@
+package cz.vutbr.fit.ivs;
+
 import javax.swing.*;
 import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
@@ -8,6 +10,7 @@ import java.awt.event.ActionListener;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.Locale;
+
 
 public class Calculator extends JTextField {
 

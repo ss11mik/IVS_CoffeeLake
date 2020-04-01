@@ -1,3 +1,5 @@
+package cz.vutbr.fit.ivs;
+
 public class MathLib {
 
     public static double calculate (double a, double b, int operation) {
