@@ -110,7 +110,7 @@ public class Calculator extends JTextField {
                             operation = Operations.ADD;
                             break;
                         case '-':
-                          /*  if (getValue() != 0) {        //TODO when user wants to switch sign?
+                          /*  if (getValue() != 0) {        //TODO when user wants to switch sign? special button
                                 setText(-1 * getValue());
                             }
                             else {*/
