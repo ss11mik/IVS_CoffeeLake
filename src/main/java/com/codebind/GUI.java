@@ -1,17 +1,21 @@
 package com.codebind;
 
 import javax.swing.*;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.Document;
+import javax.swing.text.PlainDocument;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.Locale;
 
+import cz.vutbr.fit.ivs.Calculator;
 import cz.vutbr.fit.ivs.Operations;
 import cz.vutbr.fit.ivs.MathLib;
 
-public class GUI extends JFrame
-{
+public class GUI extends JFrame {
     private JPanel mainPanel;
     private JButton button3;
     private JButton button2;
@@ -31,11 +35,10 @@ public class GUI extends JFrame
     private double memory;
 
     //Display Listener for parsing text from display
-    ActionListener displayListener = new ActionListener()
-    {
+    ActionListener displayListener = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
-            displayResult();
+            computeAllInDisplay();
         }
     };
 
@@ -43,7 +46,7 @@ public class GUI extends JFrame
     public GUI()
     {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(1200,800);
+        this.setSize(1200, 800);
         this.setContentPane(mainPanel);
         this.setVisible(true);
 
@@ -51,30 +54,8 @@ public class GUI extends JFrame
         format = NumberFormat.getNumberInstance(display.getLocale());
     }
 
-    //converting text from display to number
-    public double getValue()
-    {
-        final String text = display.getText();
-        if (text == null || text.length() == 0)
-        {
-            return 0;
-        }
-
-        //trying to parse text as double
-        //calling exception when there is not a number
-        try
-        {
-            return format.parse(text).doubleValue();
-        }
-        catch (ParseException e)
-        {
-            return 0;
-        }
-    }
-
     //to clear text on display
-    public void clear()
-    {
+    public void clear() {
         display.setText("");
     }
 
@@ -86,37 +67,61 @@ public class GUI extends JFrame
         operation = Operations.NONE;
     }
 
-    //Save the value from the display to the memory and clear the scree(why?)
-    public void saveAndClear()
-    {
-        memory = getValue();
-        clear();
-    }
-
-    //The calculated value is stored inside memory
-    public void calculateToMemoryAndClear()
-    {
-        memory = calculate();
-        clear();
-    }
-
     //formatting the double value to string and setting it to display
-    public void displayDouble(double d)
-    {
+    public void displayDouble(double d) {
         display.setText(format.format(d));
     }
 
-    //Just displays the result :)
-    public void displayResult()
-    {
-        displayDouble(calculate());
-    }
-
     //Calls the calculate method from MathLib
-    public double calculate()
-    {
-        return MathLib.calculate(memory, getValue(), operation);
+    public double calculate(double num1, double num2) {
+        return MathLib.calculate(num1, num2, operation);
     }
 
+    public void computeAllInDisplay()
+    {
+        String displayText = display.getText();
+        String[] numbers;
 
+        numbers = displayText.split("[*!+/-]");
+
+        char operator = displayText.charAt(numbers[0].length());
+
+        if(operator == '-' && numbers[0].length() == 0)
+        {
+            numbers[1] = "-" + numbers[1];
+            operator = displayText.charAt(numbers[1].length());
+            setOperation(operator);
+            displayDouble(calculate(Double.parseDouble(numbers[1]), Double.parseDouble(numbers[2])));
+        }
+        else
+        {
+            setOperation(operator);
+            displayDouble(calculate(Double.parseDouble(numbers[0]), Double.parseDouble(numbers[1])));
+        }
+    }
+
+    public void setOperation(char operator)
+    {
+        switch (operator)
+        {
+            case '+':
+                operation = Operations.ADD;
+                break;
+            case '-':
+                //TODO when user wants to switch sign? special button
+                operation = Operations.SUB;
+                break;
+            case '*':
+                operation = Operations.MUL;
+                break;
+            case '/':
+                operation = Operations.DIV;
+                break;
+            case '!':
+                operation = Operations.FACT;
+                break;
+            default://TODO exception
+                reset();
+        }
+    }
 }
