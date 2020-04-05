@@ -43,8 +43,7 @@ public class GUI extends JFrame {
     };
 
     //Constructor
-    public GUI()
-    {
+    public GUI() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(1200, 800);
         this.setContentPane(mainPanel);
@@ -52,6 +51,72 @@ public class GUI extends JFrame {
 
         display.addActionListener(displayListener);
         format = NumberFormat.getNumberInstance(display.getLocale());
+        button0.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                display.setText(display.getText() + "0");
+            }
+        });
+        button1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                display.setText(display.getText() + "1");
+            }
+        });
+        button2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                display.setText(display.getText() + "2");
+            }
+        });
+        button3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                display.setText(display.getText() + "3");
+            }
+        });
+        button4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                display.setText(display.getText() + "4");
+            }
+        });
+        button5.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                display.setText(display.getText() + "5");
+            }
+        });
+        button6.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                display.setText(display.getText() + "6");
+            }
+        });
+        button7.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                display.setText(display.getText() + "7");
+            }
+        });
+        button8.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                display.setText(display.getText() + "8");
+            }
+        });
+        button9.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                display.setText(display.getText() + "9");
+            }
+        });
+        buttonParentheses.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                display.setText(display.getText() + ".");
+            }
+        });
     }
 
     //to clear text on display
@@ -60,8 +125,7 @@ public class GUI extends JFrame {
     }
 
     //clearing screen and resetting memory and operation
-    public void reset()
-    {
+    public void reset() {
         clear();
         memory = 0;
         operation = Operations.NONE;
@@ -77,33 +141,40 @@ public class GUI extends JFrame {
         return MathLib.calculate(num1, num2, operation);
     }
 
-    public void computeAllInDisplay()
-    {
+    public void computeAllInDisplay() {
         String displayText = display.getText();
         String[] numbers;
 
-        numbers = displayText.split("[*!+/-]");
+        try {
+            numbers = displayText.split("[*!+/-]");
+            char operator = displayText.charAt(numbers[0].length());
 
-        char operator = displayText.charAt(numbers[0].length());
-
-        if(operator == '-' && numbers[0].length() == 0)
-        {
-            numbers[1] = "-" + numbers[1];
-            operator = displayText.charAt(numbers[1].length());
-            setOperation(operator);
-            displayDouble(calculate(Double.parseDouble(numbers[1]), Double.parseDouble(numbers[2])));
+            if (operator == '-' && numbers[0].length() == 0) {
+                numbers[1] = "-" + numbers[1];
+                operator = displayText.charAt(numbers[1].length());
+                setOperation(operator);
+                displayDouble(calculate(Double.parseDouble(numbers[1]), Double.parseDouble(numbers[2])));
+            } else if (numbers[0].length() == 0) {
+                display.setText(numbers[1]);
+            } else if(operator == '!') {
+                setOperation(operator);
+                displayDouble(calculate(0, Double.parseDouble(numbers[0])));
+            } else {
+                setOperation(operator);
+                displayDouble(calculate(Double.parseDouble(numbers[0]), Double.parseDouble(numbers[1])));
+            }
         }
-        else
-        {
-            setOperation(operator);
-            displayDouble(calculate(Double.parseDouble(numbers[0]), Double.parseDouble(numbers[1])));
+        catch(StringIndexOutOfBoundsException e) {
+            return;
+        }
+        catch (NumberFormatException e){
+            display.setText("You should not use these as numbers");
+            return;
         }
     }
 
-    public void setOperation(char operator)
-    {
-        switch (operator)
-        {
+    public void setOperation(char operator) {
+        switch (operator) {
             case '+':
                 operation = Operations.ADD;
                 break;
@@ -120,7 +191,7 @@ public class GUI extends JFrame {
             case '!':
                 operation = Operations.FACT;
                 break;
-            default://TODO exception
+            default:
                 reset();
         }
     }
