@@ -1,7 +1,6 @@
 package cz.vutbr.fit.ivs;
 
 import javax.swing.*;
-import gui.myGUI.GUI;
 
 public class Main {
     public static void main(String [] args)

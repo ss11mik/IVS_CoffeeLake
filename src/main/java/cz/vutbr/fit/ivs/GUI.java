@@ -1,4 +1,4 @@
-package gui.myGUI;
+package cz.vutbr.fit.ivs;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -38,7 +38,7 @@ public class GUI extends JFrame {
     //Constructor
     public GUI() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(1200, 800);
+        this.setSize(647, 400);
         this.setContentPane(mainPanel);
         this.setVisible(true);
 
