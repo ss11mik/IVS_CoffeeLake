@@ -31,7 +31,7 @@ public class GUI extends JFrame {
     ActionListener displayListener = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
-            computeAllInDisplay();
+            
         }
     };
 
@@ -115,77 +115,5 @@ public class GUI extends JFrame {
     //to clear text on display
     public void clear() {
         display.setText("");
-    }
-
-    //clearing screen and resetting memory and operation
-    public void reset() {
-        clear();
-        memory = 0;
-        operation = Operations.NONE;
-    }
-
-    //formatting the double value to string and setting it to display
-    public void displayDouble(double d) {
-        display.setText(format.format(d));
-    }
-
-    //Calls the calculate method from MathLib
-    public double calculate(double num1, double num2) {
-        return MathLib.calculate(num1, num2, operation);
-    }
-
-    public void computeAllInDisplay() {
-        String displayText = display.getText();
-        String[] numbers;
-
-        try {
-            numbers = displayText.split("[*!+/-]");
-            char operator = displayText.charAt(numbers[0].length());
-
-            if (operator == '-' && numbers[0].length() == 0) {
-                numbers[1] = "-" + numbers[1];
-                operator = displayText.charAt(numbers[1].length());
-                setOperation(operator);
-                displayDouble(calculate(Double.parseDouble(numbers[1]), Double.parseDouble(numbers[2])));
-            } else if (numbers[0].length() == 0) {
-                display.setText(numbers[1]);
-            } else if(operator == '!') {
-                setOperation(operator);
-                displayDouble(calculate(0, Double.parseDouble(numbers[0])));
-            } else {
-                setOperation(operator);
-                displayDouble(calculate(Double.parseDouble(numbers[0]), Double.parseDouble(numbers[1])));
-            }
-        }
-        catch(StringIndexOutOfBoundsException e) {
-            return;
-        }
-        catch (NumberFormatException e){
-            display.setText("You should not use these as numbers");
-            return;
-        }
-    }
-
-    public void setOperation(char operator) {
-        switch (operator) {
-            case '+':
-                operation = Operations.ADD;
-                break;
-            case '-':
-                //TODO when user wants to switch sign? special button
-                operation = Operations.SUB;
-                break;
-            case '*':
-                operation = Operations.MUL;
-                break;
-            case '/':
-                operation = Operations.DIV;
-                break;
-            case '!':
-                operation = Operations.FACT;
-                break;
-            default:
-                reset();
-        }
     }
 }
