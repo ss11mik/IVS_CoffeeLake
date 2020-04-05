@@ -1,17 +1,10 @@
-package com.codebind;
+package gui.myGUI;
 
 import javax.swing.*;
-import javax.swing.text.AttributeSet;
-import javax.swing.text.BadLocationException;
-import javax.swing.text.Document;
-import javax.swing.text.PlainDocument;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.NumberFormat;
-import java.text.ParseException;
-import java.util.Locale;
 
-import cz.vutbr.fit.ivs.Calculator;
 import cz.vutbr.fit.ivs.Operations;
 import cz.vutbr.fit.ivs.MathLib;
 
