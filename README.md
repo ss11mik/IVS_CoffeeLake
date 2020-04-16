@@ -15,4 +15,4 @@ CoffeeLake
 Licence
 -------
 
-viz [licence](LICENCE.shtml).
+viz [licence](https://ss11mik.github.io/IVS_CoffeeLake/LICENCE.shtml).
