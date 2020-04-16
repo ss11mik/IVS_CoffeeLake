@@ -21,7 +21,7 @@ public class GUI extends JFrame {
 
 
     public static void main(String [] args) {
-        JFrame gui = new GUI();
+        new GUI();
     }
 
     //Display Listener for parsing text from display
@@ -34,29 +34,29 @@ public class GUI extends JFrame {
 
     //Constructor
     public GUI() {
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(647, 400);
-        this.setContentPane(mainPanel);
-        this.setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(647, 400);
+        setContentPane(mainPanel);
+        setVisible(true);
 
         display.addActionListener(displayListener);
-        button0.addActionListener(getButtonListener('0'));
-        button1.addActionListener(getButtonListener('1'));
-        button2.addActionListener(getButtonListener('2'));
-        button3.addActionListener(getButtonListener('3'));
-        button4.addActionListener(getButtonListener('4'));
-        button5.addActionListener(getButtonListener('5'));
-        button6.addActionListener(getButtonListener('6'));
-        button7.addActionListener(getButtonListener('7'));
-        button8.addActionListener(getButtonListener('8'));
-        button9.addActionListener(getButtonListener('9'));
+        button0.addActionListener(getButtonListener("0"));
+        button1.addActionListener(getButtonListener("1"));
+        button2.addActionListener(getButtonListener("2"));
+        button3.addActionListener(getButtonListener("3"));
+        button4.addActionListener(getButtonListener("4"));
+        button5.addActionListener(getButtonListener("5"));
+        button6.addActionListener(getButtonListener("6"));
+        button7.addActionListener(getButtonListener("7"));
+        button8.addActionListener(getButtonListener("8"));
+        button9.addActionListener(getButtonListener("9"));
     }
 
-    public ActionListener getButtonListener(char tag) {
+    public ActionListener getButtonListener(String tag) {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent){
-                display.setText(display.getText() + String.valueOf(tag));
+                display.add(tag);
             }
         };
     }

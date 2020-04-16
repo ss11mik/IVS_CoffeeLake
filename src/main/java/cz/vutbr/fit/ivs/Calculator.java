@@ -48,7 +48,7 @@ public class Calculator extends JTextField {
     }
 
     public void clear() {
-        setText("");
+        super.setText("");
     }
 
     public void reset() {
@@ -67,11 +67,13 @@ public class Calculator extends JTextField {
         clear();
     }
 
-    public void setText(String text) {
-        if (text.isEmpty())
-            super.setText("");
-        else
-            setValue(Double.parseDouble(text));
+    public void add(String text) {
+        try {
+            getDocument().insertString(0, text, null);
+        }
+        catch (BadLocationException e) {
+            //TODO
+        }
     }
 
     public void setValue(double d) {
