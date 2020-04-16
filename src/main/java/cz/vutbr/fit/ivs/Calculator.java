@@ -69,7 +69,7 @@ public class Calculator extends JTextField {
 
     public void setText(String text) {
         if (text.isEmpty())
-            clear();
+            super.setText("");
         else
             setValue(Double.parseDouble(text));
     }

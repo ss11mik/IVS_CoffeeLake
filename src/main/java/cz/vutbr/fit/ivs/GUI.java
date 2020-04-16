@@ -21,7 +21,7 @@ public class GUI extends JFrame {
 
 
     public static void main(String [] args) {
-        new GUI();
+        JFrame gui = new GUI();
     }
 
     //Display Listener for parsing text from display
