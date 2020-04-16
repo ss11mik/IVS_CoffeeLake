@@ -36,7 +36,7 @@ public class GUI extends JFrame {
     ActionListener displayListener = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
-            
+
         }
     };
 
@@ -48,7 +48,6 @@ public class GUI extends JFrame {
         this.setVisible(true);
 
         display.addActionListener(displayListener);
-        format = NumberFormat.getNumberInstance(display.getLocale());
         button0.addActionListener(getButtonListener('0'));
         button1.addActionListener(getButtonListener('1'));
         button2.addActionListener(getButtonListener('2'));
@@ -75,5 +74,14 @@ public class GUI extends JFrame {
     //to clear text on display
     public void clear() {
         display.setText("");
+    }
+
+    public String getText(){
+        return display.getText();
+    }
+
+    public void setText(String text){
+        display.setText(text);
+        return;
     }
 }
