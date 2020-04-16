@@ -1,3 +1,4 @@
+import cz.vutbr.fit.ivs.MathLib;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

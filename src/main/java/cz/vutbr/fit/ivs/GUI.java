@@ -5,9 +5,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.NumberFormat;
 
-import cz.vutbr.fit.ivs.Operations;
-import cz.vutbr.fit.ivs.MathLib;
-
 public class GUI extends JFrame {
     private JPanel mainPanel;
     private JButton button3;
@@ -27,6 +24,11 @@ public class GUI extends JFrame {
     private int operation = Operations.NONE;
     private double memory;
 
+
+    public static void main(String [] args) {
+        new GUI();
+    }
+
     //Display Listener for parsing text from display
     ActionListener displayListener = new ActionListener() {
         @Override
@@ -41,6 +43,7 @@ public class GUI extends JFrame {
         this.setSize(647, 400);
         this.setContentPane(mainPanel);
         this.setVisible(true);
+
 
         display.addActionListener(displayListener);
         format = NumberFormat.getNumberInstance(display.getLocale());
