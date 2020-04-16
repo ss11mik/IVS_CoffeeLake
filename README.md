@@ -1,19 +1,18 @@
-Prostredi
+Prostředí
 ---------
 
-Ubuntu 64bit
-Windows 64bit
+multiplatformní, běží v Javě
+požadována Java rutime (JRE) na klientském PC
 
-Autori
+Autoři
 ------
 
-Nazev tymu
-- xlogin01 jmeno prijmeni 
-- xlogin02 jmeno prijmeni 
-- xlogin03 jmeno prijmeni 
-- xlogin04 jmeno prijmeni 
+CoffeeLake
+- xlohnm00 Marek Lohn
+- xszotk07 René Szotkowski
+- xmikul69 Ondřej Mikula
 
 Licence
 -------
 
-Tento program je poskytovan...
+viz [licence](LICENCE.shtml).
