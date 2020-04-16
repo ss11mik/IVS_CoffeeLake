@@ -13,7 +13,7 @@ public class MathLib {
             case Operations.DIV:
                 return divide(a, b);
             case Operations.SQRT:
-                return sqrt(a, b);
+                return sqrt(a);
             case Operations.FACT:
                 return fact((long) b);
             case Operations.POW:
@@ -41,9 +41,16 @@ public class MathLib {
         return a / b;
     }
 
-    public static double sqrt(double a, double b) {
-        //TODO use of Java Math permitted?
-        return 0;
+    public static double sqrt(double a) {
+        if(a < 0)
+            return 0;
+        double temp;
+        double sr = a / 2;
+        do {
+            temp = sr;
+            sr = (temp + (a / temp)) / 2;
+        }while((temp - sr) != 0);
+        return sr;
     }
 
     public static long fact(long a) {
