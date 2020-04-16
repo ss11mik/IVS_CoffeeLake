@@ -56,25 +56,8 @@ public class GUI extends JFrame {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent){
-                display.setText(display.getText() + tag);
+                display.setText(display.getText() + String.valueOf(tag));
             }
         };
-    }
-
-    //to clear text on display
-    public void clear() {
-        display.clear();
-    }
-
-    public String getText(){
-        return display.getText();
-    }
-
-    public void setText(String text){
-        display.setText(text);
-    }
-
-    public void reset() {
-        display.reset();
     }
 }

@@ -35,7 +35,7 @@ public class Calculator extends JTextField {
     }
 
     public double getValue() {
-        final String text = getText();
+        final String text = super.getText();
         if (text == null || text.length() == 0) {
             return 0;
         }
