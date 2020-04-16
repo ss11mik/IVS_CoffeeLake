@@ -5,6 +5,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.NumberFormat;
 
+import cz.vutbr.fit.ivs.Operations;
+import cz.vutbr.fit.ivs.MathLib;
+
 public class GUI extends JFrame {
     private JPanel mainPanel;
     private JButton button3;
@@ -44,75 +47,29 @@ public class GUI extends JFrame {
         this.setContentPane(mainPanel);
         this.setVisible(true);
 
-
         display.addActionListener(displayListener);
         format = NumberFormat.getNumberInstance(display.getLocale());
-        button0.addActionListener(new ActionListener() {
+        button0.addActionListener(getButtonListener('0'));
+        button1.addActionListener(getButtonListener('1'));
+        button2.addActionListener(getButtonListener('2'));
+        button3.addActionListener(getButtonListener('3'));
+        button4.addActionListener(getButtonListener('4'));
+        button5.addActionListener(getButtonListener('5'));
+        button6.addActionListener(getButtonListener('6'));
+        button7.addActionListener(getButtonListener('7'));
+        button8.addActionListener(getButtonListener('8'));
+        button9.addActionListener(getButtonListener('9'));
+    }
+
+    public ActionListener getButtonListener(char tag)
+    {
+        ActionListener listener = new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                display.setText(display.getText() + "0");
+            public void actionPerformed(ActionEvent actionEvent){
+                display.setText(display.getText() + tag);
             }
-        });
-        button1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                display.setText(display.getText() + "1");
-            }
-        });
-        button2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                display.setText(display.getText() + "2");
-            }
-        });
-        button3.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                display.setText(display.getText() + "3");
-            }
-        });
-        button4.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                display.setText(display.getText() + "4");
-            }
-        });
-        button5.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                display.setText(display.getText() + "5");
-            }
-        });
-        button6.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                display.setText(display.getText() + "6");
-            }
-        });
-        button7.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                display.setText(display.getText() + "7");
-            }
-        });
-        button8.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                display.setText(display.getText() + "8");
-            }
-        });
-        button9.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                display.setText(display.getText() + "9");
-            }
-        });
-        buttonParentheses.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                display.setText(display.getText() + ".");
-            }
-        });
+        };
+        return listener;
     }
 
     //to clear text on display
