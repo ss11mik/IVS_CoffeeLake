@@ -1,13 +1,13 @@
 Prostředí
 ---------
 
-multiplatformní, běží v Javě
-požadována Java rutime (JRE) na klientském PC
+- multiplatformní, běží v Javě
+- požadována Java rutime (JRE) na klientském PC
 
 Autoři
 ------
 
-CoffeeLake
+Tým CoffeeLake
 - xlohnm00 Marek Lohn
 - xszotk07 René Szotkowski
 - xmikul69 Ondřej Mikula
