@@ -3,10 +3,6 @@ package cz.vutbr.fit.ivs;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.NumberFormat;
-
-import cz.vutbr.fit.ivs.Operations;
-import cz.vutbr.fit.ivs.MathLib;
 
 public class GUI extends JFrame {
     private JPanel mainPanel;
@@ -21,11 +17,7 @@ public class GUI extends JFrame {
     private JButton button6;
     private JButton button0;
     private JButton buttonParentheses;
-    private JFormattedTextField display;
-
-    private final NumberFormat format;
-    private int operation = Operations.NONE;
-    private double memory;
+    private Calculator display;
 
 
     public static void main(String [] args) {
@@ -60,8 +52,7 @@ public class GUI extends JFrame {
         button9.addActionListener(getButtonListener('9'));
     }
 
-    public ActionListener getButtonListener(char tag)
-    {
+    public ActionListener getButtonListener(char tag) {
         ActionListener listener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent){
@@ -73,7 +64,7 @@ public class GUI extends JFrame {
 
     //to clear text on display
     public void clear() {
-        display.setText("");
+        display.clear();
     }
 
     public String getText(){
@@ -82,6 +73,9 @@ public class GUI extends JFrame {
 
     public void setText(String text){
         display.setText(text);
-        return;
+    }
+
+    public void reset() {
+        display.reset();
     }
 }

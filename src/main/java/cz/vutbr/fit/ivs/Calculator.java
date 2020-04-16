@@ -9,15 +9,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.NumberFormat;
 import java.text.ParseException;
-import java.util.Locale;
 
 
 public class Calculator extends JTextField {
 
     private int operation = Operations.NONE;
-
     private double memory;
-
     private final NumberFormat format;
 
     public Calculator() {
@@ -26,18 +23,16 @@ public class Calculator extends JTextField {
         format = NumberFormat.getNumberInstance(getLocale());
     }
 
-    public Calculator(int cols) {
-        super(cols);
-        addActionListener(listener);
-        format = NumberFormat.getNumberInstance(Locale.US);
-    }
-
     ActionListener listener = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
             calculateAndSetText();
         }
     };
+
+    public String getText() {
+        return String.valueOf(getValue());
+    }
 
     public double getValue() {
         final String text = getText();
@@ -50,7 +45,6 @@ public class Calculator extends JTextField {
         catch (ParseException e) {
             return 0;
         }
-
     }
 
     public void clear() {
@@ -73,7 +67,11 @@ public class Calculator extends JTextField {
         clear();
     }
 
-    public void setText(double d) {
+    public void setText(String text) {
+        setValue(Double.parseDouble(text));
+    }
+
+    public void setValue(double d) {
         super.setText(format.format(d));
     }
 
@@ -82,7 +80,7 @@ public class Calculator extends JTextField {
     }
 
     public void calculateAndSetText() {
-        setText(calculate());
+        setValue(calculate());
     }
 
     protected Document createDefaultModel() {
