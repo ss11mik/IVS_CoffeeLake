@@ -53,13 +53,12 @@ public class GUI extends JFrame {
     }
 
     public ActionListener getButtonListener(char tag) {
-        ActionListener listener = new ActionListener() {
+        return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent){
                 display.setText(display.getText() + tag);
             }
         };
-        return listener;
     }
 
     //to clear text on display
