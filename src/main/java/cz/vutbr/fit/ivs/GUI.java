@@ -19,6 +19,8 @@ public class GUI extends JFrame {
     private JButton buttonParentheses;
     private Calculator display;
     private JButton clearButton;
+    private JButton calcButton;
+    private JTextField memoryView;
 
 
     public static void main(String [] args) {
@@ -52,6 +54,7 @@ public class GUI extends JFrame {
         button8.addActionListener(getButtonListener("8"));
         button9.addActionListener(getButtonListener("9"));
         clearButton.addActionListener(getClearButtonListener());
+        calcButton.addActionListener(getCalcButtonListener());
     }
 
     public ActionListener getButtonListener(String tag) {
@@ -68,6 +71,15 @@ public class GUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent actionEvent){
                 display.clear();
+            }
+        };
+    }
+
+    public ActionListener getCalcButtonListener() {
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent){
+                display.calculateAndSetText();
             }
         };
     }
