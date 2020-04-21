@@ -42,7 +42,7 @@ public class MathLib {
     }
 
     public static double sqrt(double a) {
-        if(a < 0)
+        if(a <= 0)
             return 0;
         double temp;
         double sr = a / 2;
