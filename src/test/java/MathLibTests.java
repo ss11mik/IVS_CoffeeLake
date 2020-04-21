@@ -87,6 +87,18 @@ public class MathLibTests {
     }
 
     @Test
+    public void testSqrt() {
+        assertEquals(1, MathLib.sqrt(1), 0);
+        assertEquals(0, MathLib.sqrt(0), 0);
+        assertEquals(10, MathLib.sqrt(100), 0);
+        assertEquals(0, MathLib.sqrt(-1), 0);
+        assertEquals(0, MathLib.sqrt(-999), 0);
+        assertEquals(8, MathLib.sqrt(64), 0);
+        assertEquals(1.41421356, MathLib.sqrt(2), TESTS_PRECISION);
+        assertEquals(351.3630601, MathLib.sqrt(123456), 0.00000001);
+    }
+
+    @Test
     public void testPow() {
         assertEquals(1, MathLib.pow(1, 0));
         assertEquals(1, MathLib.pow(888, 0));
