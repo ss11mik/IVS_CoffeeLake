@@ -4,6 +4,12 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * The purpose of this class is to communicate with GUI and pass actions to {@link cz.vutbr.fit.ivs.Calculator}
+ * It also contains the main() method
+ *
+ * @author Marek Lohn
+ */
 public class GUI extends JFrame {
     private JPanel mainPanel;
     private JButton button3;
@@ -23,6 +29,10 @@ public class GUI extends JFrame {
     private JTextField memoryView;
 
 
+    /**
+     * Entry point. Only initializes {@link GUI} class
+     * @param args not used
+     */
     public static void main(String [] args) {
         new GUI();
     }
@@ -35,7 +45,10 @@ public class GUI extends JFrame {
         }
     };
 
-    //Constructor
+    /**
+     * Constructor of GUI class.
+     * Creates window and binds button listeners
+     */
     public GUI() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(647, 400);

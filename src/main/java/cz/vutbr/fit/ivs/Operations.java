@@ -1,5 +1,10 @@
 package cz.vutbr.fit.ivs;
 
+/**
+ * This class provides constants, which identify operations
+ *
+ * @author Ondřej Mikula
+ */
 public class Operations {
     public static final int NONE = -1;
     public static final int ADD = 0;
