@@ -27,7 +27,14 @@ public class GUI extends JFrame {
     private JButton clearButton;
     private JButton calcButton;
     private JTextField memoryView;
-
+    private JButton buttonPow;
+    private JButton buttonSqrt;
+    private JButton buttonFact;
+    private JButton buttonMod;
+    private JButton buttonDiv;
+    private JButton buttonMul;
+    private JButton buttonSub;
+    private JButton buttonAdd;
 
     /**
      * Entry point. Only initializes {@link GUI} class
@@ -66,6 +73,12 @@ public class GUI extends JFrame {
         button7.addActionListener(getButtonListener("7"));
         button8.addActionListener(getButtonListener("8"));
         button9.addActionListener(getButtonListener("9"));
+        buttonFact.addActionListener(getButtonListener("!"));
+        buttonAdd.addActionListener(getButtonListener("+"));
+        buttonSub.addActionListener(getButtonListener("-"));
+        buttonMul.addActionListener(getButtonListener("*"));
+        buttonDiv.addActionListener(getButtonListener("/"));
+        buttonMod.addActionListener(getButtonListener("%"));
         clearButton.addActionListener(getClearButtonListener());
         calcButton.addActionListener(getCalcButtonListener());
     }
