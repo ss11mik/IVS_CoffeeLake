@@ -69,7 +69,7 @@ public class Calculator extends JTextField {
 
     public void add(String text) {
         try {
-            getDocument().insertString(0, text, null);
+            getDocument().insertString(super.getText().length(), text, null);
         }
         catch (BadLocationException e) {
             //TODO
