@@ -73,15 +73,15 @@ public class GUI extends JFrame {
         button7.addActionListener(getButtonListener("7"));
         button8.addActionListener(getButtonListener("8"));
         button9.addActionListener(getButtonListener("9"));
-        buttonFact.addActionListener(getButtonListener("!"));
-        buttonAdd.addActionListener(getButtonListener("+"));
-        buttonSub.addActionListener(getButtonListener("-"));
-        buttonMul.addActionListener(getButtonListener("*"));
-        buttonDiv.addActionListener(getButtonListener("/"));
-        buttonMod.addActionListener(getButtonListener("%"));
-        buttonPow.addActionListener(getButtonListener("^"));
-        buttonSqrt.addActionListener(getButtonListener("#"));
         buttonParentheses.addActionListener(getButtonListener("."));
+        buttonFact.addActionListener(getOperationListener("!"));
+        buttonAdd.addActionListener(getOperationListener("+"));
+        buttonSub.addActionListener(getOperationListener("-"));
+        buttonMul.addActionListener(getOperationListener("*"));
+        buttonDiv.addActionListener(getOperationListener("/"));
+        buttonMod.addActionListener(getOperationListener("%"));
+        buttonPow.addActionListener(getOperationListener("^"));
+        buttonSqrt.addActionListener(getOperationListener("#"));
         clearButton.addActionListener(getClearButtonListener());
         calcButton.addActionListener(getCalcButtonListener());
     }
@@ -91,6 +91,16 @@ public class GUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent actionEvent){
                 display.add(tag);
+            }
+        };
+    }
+
+    public ActionListener getOperationListener(String tag) {
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent){
+                display.add(tag);
+                memoryView.setText(display.memoryView() + tag);
             }
         };
     }

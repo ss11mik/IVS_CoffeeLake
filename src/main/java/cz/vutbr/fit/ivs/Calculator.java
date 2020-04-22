@@ -103,6 +103,11 @@ public class Calculator extends JTextField {
         }
     }
 
+    public String memoryView()
+    {
+        return String.valueOf(memory);
+    }
+
     public void setValue(double d) {
         super.setText(format.format(d));
     }
