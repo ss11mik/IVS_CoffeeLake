@@ -169,6 +169,18 @@ public class Calculator extends JTextField {
                             operation = Operations.FACT;
                             calculateAndSetText();
                             break;
+                        case '%':
+                            clearAndCalculateToMemory();
+                            operation = Operations.MOD;
+                            break;
+                        case '^':
+                            clearAndCalculateToMemory();
+                            operation = Operations.POW;
+                            break;
+                        case '#':
+                            clearAndCalculateToMemory();
+                            operation = Operations.SQRT;
+                            break;
                         default:
                     }
                 }

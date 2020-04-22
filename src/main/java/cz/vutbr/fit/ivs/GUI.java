@@ -79,6 +79,9 @@ public class GUI extends JFrame {
         buttonMul.addActionListener(getButtonListener("*"));
         buttonDiv.addActionListener(getButtonListener("/"));
         buttonMod.addActionListener(getButtonListener("%"));
+        buttonPow.addActionListener(getButtonListener("^"));
+        buttonSqrt.addActionListener(getButtonListener("#"));
+        buttonParentheses.addActionListener(getButtonListener("."));
         clearButton.addActionListener(getClearButtonListener());
         calcButton.addActionListener(getCalcButtonListener());
     }
