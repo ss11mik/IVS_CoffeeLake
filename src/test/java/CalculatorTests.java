@@ -1,5 +1,4 @@
 import cz.vutbr.fit.ivs.Calculator;
-import cz.vutbr.fit.ivs.MathLib;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -67,6 +66,7 @@ public class CalculatorTests {
         calculator.add("3");
         calculator.add("*");
         calculator.add("2");
+        calculator.add("=");
 
         assertEquals(calculator.getValue(), 10, TESTS_PRECISION);
     }
@@ -78,6 +78,7 @@ public class CalculatorTests {
         calculator.add("2");
         calculator.add("+");
         calculator.add("3");
+        calculator.add("=");
 
         assertEquals(calculator.getValue(), 8, TESTS_PRECISION);
     }
@@ -89,6 +90,7 @@ public class CalculatorTests {
         calculator.add("2");
         calculator.add("+");
         calculator.add("10");
+        calculator.add("=");
 
         assertEquals(calculator.getValue(), 30, TESTS_PRECISION);
     }
@@ -100,6 +102,7 @@ public class CalculatorTests {
         calculator.add("2");
         calculator.add("*");
         calculator.add("10");
+        calculator.add("=");
 
         assertEquals(calculator.getValue(), 1000, TESTS_PRECISION);
     }
@@ -113,6 +116,7 @@ public class CalculatorTests {
         calculator.add("2");
         calculator.add("/");
         calculator.add("2");
+        calculator.add("=");
 
         assertEquals(calculator.getValue(), 6, TESTS_PRECISION);
     }

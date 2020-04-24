@@ -146,9 +146,9 @@ public class Calculator extends JTextField {
                         case '.':
                             super.insertString(offset, string, attributeSet);
                             break;
-                   /*     case '=':
+                        case '=':
                             calculateAndSetText();
-                            break;*/
+                            break;
                         case '+':
                             clearAndCalculateToMemory();
                             operation = Operations.ADD;
