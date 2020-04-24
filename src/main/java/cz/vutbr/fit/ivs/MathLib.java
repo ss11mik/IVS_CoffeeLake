@@ -85,7 +85,7 @@ public class MathLib {
      * Calculates n'th root by custom implemented algorithm
      * @param a the value to be rooted
      * @param b b'th root
-     * @return b'th root of a with precision PRECISION
+     * @return -1 for negative value, else b'th root of a with precision PRECISION
      */
     public static double sqrt(double a, int b) {
         if(a < 0)
