@@ -71,14 +71,14 @@ public class MathLib {
     }
 
     /**
-     * Calculates division of a by b
-     * @param a divided number
-     * @param b divisor
-     * @return division of a by b if applicable
+     * Calculates division of a by divisor
+     * @param divided divided number
+     * @param divisor divisor
+     * @return division of divided number by divisor if applicable
      * @throws ArithmeticException when divisor is zero
      */
-    public static double divide(double a, double b) throws ArithmeticException {
-        return a / b;
+    public static double divide(double divided, double divisor) throws ArithmeticException {
+        return divided / divisor;
     }
 
     /**
@@ -114,29 +114,29 @@ public class MathLib {
     }
 
     /**
-     * Calculates b'th power of a
+     * Calculates n'th power of base
      * Works only for integer exponent
-     * @param a base
-     * @param b exponent
-     * @return powered value
+     * @param base base
+     * @param exponent exponent
+     * @return powered value (= base ^ exponent)
      */
-    public static double pow(double a, double b) {
-        if (a == 0)
+    public static double pow(double base, double exponent) {
+        if (base == 0)
             return 0;
         long j = 1;
-        for (long i = 0; i < b; ++i) {
-            j *= a;
+        for (long i = 0; i < exponent; ++i) {
+            j *= base;
         }
         return j;
     }
 
     /**
      * Calculates modulo
-     * @param a base value
-     * @param b modulator
-     * @return modulo of a by b
+     * @param base base value
+     * @param modulator modulator
+     * @return modulo of base by modulator
      */
-    public static double mod(double a, double b) {
-        return a % b;
+    public static double mod(double base, double modulator) {
+        return base % modulator;
     }
 }
