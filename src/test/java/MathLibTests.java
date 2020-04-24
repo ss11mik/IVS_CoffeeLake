@@ -79,34 +79,34 @@ public class MathLibTests {
 
     @Test
     public void testFact() {
-        assertEquals(120, MathLib.fact(5));
-        assertEquals(1, MathLib.fact(0));
-        assertEquals(1, MathLib.fact(1));
-        assertEquals(1, MathLib.fact(-1));
-        assertEquals(479001600, MathLib.fact(12));
+        assertEquals(120, MathLib.fact(5), 0);
+        assertEquals(1, MathLib.fact(0), 0);
+        assertEquals(1, MathLib.fact(1), 0);
+        assertEquals(1, MathLib.fact(-1), 0);
+        assertEquals(479001600, MathLib.fact(12), 0);
     }
 
     @Test
     public void testSqrt() {
-        assertEquals(1, MathLib.sqrt(1), 0);
-        assertEquals(0, MathLib.sqrt(0), 0);
-        assertEquals(10, MathLib.sqrt(100), 0);
-        assertEquals(0, MathLib.sqrt(-1), 0);
-        assertEquals(0, MathLib.sqrt(-999), 0);
-        assertEquals(8, MathLib.sqrt(64), 0);
-        assertEquals(1.41421356, MathLib.sqrt(2), TESTS_PRECISION);
-        assertEquals(351.3630601, MathLib.sqrt(123456), 0.00000001);
+        assertEquals(1, MathLib.sqrt(1, 2), 0);
+        assertEquals(0, MathLib.sqrt(0, 2), 0);
+        assertEquals(10, MathLib.sqrt(100, 2), 0);
+        assertEquals(-1, MathLib.sqrt(-1, 2), 0);
+        assertEquals(-1, MathLib.sqrt(-999, 2), 0);
+        assertEquals(8, MathLib.sqrt(64, 2), 0);
+        assertEquals(1.41421356, MathLib.sqrt(2, 2), TESTS_PRECISION);
+        assertEquals(351.3630601, MathLib.sqrt(123456, 2), 0.00000001);
     }
 
     @Test
     public void testPow() {
-        assertEquals(1, MathLib.pow(1, 0));
-        assertEquals(1, MathLib.pow(888, 0));
-        assertEquals(1, MathLib.pow(1, 888));
-        assertEquals(256, MathLib.pow(2, 8));
-        assertEquals(65536, MathLib.pow(2, 16));
-        assertEquals(0, MathLib.pow(0, 4096));
-        assertEquals(0, MathLib.pow(0, 0));
+        assertEquals(1, MathLib.pow(1, 0), 0);
+        assertEquals(1, MathLib.pow(888, 0), 0);
+        assertEquals(1, MathLib.pow(1, 888), 0);
+        assertEquals(256, MathLib.pow(2, 8), 0);
+        assertEquals(65536, MathLib.pow(2, 16), 0);
+        assertEquals(0, MathLib.pow(0, 4096), 0);
+        assertEquals(0, MathLib.pow(0, 0), 0);
     }
 
     @Test

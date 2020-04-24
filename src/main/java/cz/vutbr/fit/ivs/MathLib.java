@@ -8,6 +8,8 @@ package cz.vutbr.fit.ivs;
  */
 public class MathLib {
 
+    public static final double PRECISION = 0.00000001;
+
     /**
      * Router method, which calls method specified by operation param
      * @param a first operand
@@ -26,7 +28,7 @@ public class MathLib {
             case Operations.DIV:
                 return divide(a, b);
             case Operations.SQRT:
-                return sqrt(a);
+                return sqrt(a, (int) b);        //TODO better calling logic
             case Operations.FACT:
                 return fact((long) b);
             case Operations.POW:
@@ -80,28 +82,32 @@ public class MathLib {
     }
 
     /**
-     * Calculates square root by custom implemented algorithm
+     * Calculates n'th root by custom implemented algorithm
      * @param a the value to be rooted
-     * @return square root
+     * @param b b'th root
+     * @return b'th root of a with precision PRECISION
      */
-    public static double sqrt(double a) {
-        if(a <= 0)
+    public static double sqrt(double a, int b) {
+        if(a < 0)
+            return -1;
+        if(a == 0)
             return 0;
-        double temp;
-        double sr = a / 2;
-        do {
+        double temp = a;
+        double sr = a / b;
+        while (Math.abs(temp - sr) > PRECISION){
             temp = sr;
-            sr = (temp + (a / temp)) / 2;
-        }while((temp - sr) != 0);
+            sr = ((b - 1.0) * sr + a / Math.pow(sr, b - 1.0)) / b;
+        };
         return sr;
     }
 
     /**
      * Calculates factorial for given value
+     * Works only for integer parameter
      * @param a the parameter to be factorized
      * @return 1 for a <= 0, else factorial
      */
-    public static long fact(long a) {
+    public static double fact(double a) {
         if(a <= 0)
             return 1;
         return fact(a-1) * a;
@@ -109,11 +115,12 @@ public class MathLib {
 
     /**
      * Calculates b'th power of a
+     * Works only for integer exponent
      * @param a base
      * @param b exponent
      * @return powered value
      */
-    public static long pow(long a, long b) {
+    public static double pow(double a, double b) {
         if (a == 0)
             return 0;
         long j = 1;
