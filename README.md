@@ -2,7 +2,11 @@ Prostředí
 ---------
 
 - multiplatformní, běží v Javě
-- požadována Java rutime (JRE) na klientském PC
+- požadována Java rutime (JRE) na klientském PC (vyvinuto a testováno na verzi 11.0.6)
+
+Požadavky pro kompilaci
+
+- Gradle (5.2.1)
 
 Autoři
 ------
