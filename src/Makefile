@@ -1,35 +1,44 @@
+ROOT = ../
+GRADLEW = cd $(ROOT) && ./gradlew
+TEX_GARBAGE = *.aux *.bib *.bbl *.blg *.log *.out *.run.xml *.synctex.gz *.toc
+TO_PACK =  .git/ mockup/ plan/ profiling/ src/ .gitignore .editorconfig README.md debugging.png dokumentace.pdf hodnoceni.txt screenshot.png
+PACKED = xlohnm00.tar.gz
+DONT_RUN_TESTS = -x test
+
 .PHONY: test
 
 all: build profile jar
 
-pack: clean
+pack: doc clean
 	mkdir ../repo/
-	cp -rt ../repo/ ../.git/ ../mockup/ ../plan/ ../profiling/ ../src/ ../.gitignore ../.editorconfig ../README.md ../debugging.png ../dokumentace.pdf ../hodnoceni.txt ../screenshot.png
-	tar -zcf ../xlohnm00.tar.gz ../doc/ ../install/ ../repo/
+	cd $(ROOT) && cp -rt repo/ $(TO_PACK)
+	tar -zcf ../$(PACKED) ../doc/ ../install/ ../repo/
 	rm -rf ../repo/
 
 clean:
 	rm -rf html latex
-	cd .. && ./gradlew clean
+	$(GRADLEW) clean
+	cd ../doc && rm -f $(TEX_GARBAGE)
+	cd ../profiling/report/ && rm -f $(TEX_GARBAGE)
 
 test:
-	cd .. && ./gradlew test
+	$(GRADLEW) test
 
 doc:
 	doxygen
-	cd ../dokumentace/ && pdflatex dokumentace.tex && pdflatex dokumentace.tex	# double compilation for ToC generation
+	cd ../doc/ && pdflatex dokumentace.tex && pdflatex dokumentace.tex && mv dokumentace.pdf ../	# double compilation for ToC generation
 	cd ../profiling/report/ && pdflatex zprava.tex && mv zprava.pdf ../
 
 run: jar
 	cd ../build/libs/ && java -jar *.jar
 
 profile:
-	cd .. && ./gradlew --profile -x test
+	$(GRADLEW) --profile $(DONT_RUN_TESTS)
 
 
 
 build:
-	cd .. && ./gradlew build -x test
+	$(GRADLEW) build $(DONT_RUN_TESTS)
 
 jar:
-	cd .. && ./gradlew jar -x test
+	$(GRADLEW) jar $(DONT_RUN_TESTS)
