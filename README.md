@@ -9,6 +9,7 @@ Požadavky pro kompilaci
 - Gradle (5.2.1)
 - JRE (11)
 - GNU make
+- pdflatex (pro vygenerování manuálu, pdf dokumentace a profiling reportu)
 
 Autoři
 ------

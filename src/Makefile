@@ -16,6 +16,7 @@ test:
 doc:
 	doxygen
 	cd ../dokumentace/ && pdflatex dokumentace.tex && pdflatex dokumentace.tex	# double compilation for ToC generation
+	cd ../profiling/report/ && pdflatex zprava.tex && mv zprava.pdf ../
 
 run: jar
 	cd ../build/libs/ && java -jar *.jar
