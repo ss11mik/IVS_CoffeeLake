@@ -1,3 +1,7 @@
+# JCalc
+
+![screenshot](screenshot.png)
+
 Prostředí
 ---------
 
