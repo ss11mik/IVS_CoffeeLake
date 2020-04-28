@@ -60,7 +60,7 @@ Postup:
 	\item Přejděte do složky s projektem a následně do podsložky src/
 	\item Spusťte cíl \uv{jar}: \emph{make jar}
 	\item pokud byl překlad úspěšný, ve složce \emph{PROJEKT/build/libs} se nachází zkompilovaný jar soubor kalkulačky
-	\item Umístěte jar do složky, kde si přejete mít kalkulačku nainstalovánu (pro Windows například \emph{C:\textbackslash Program Files\textbackslash Calc\textbackslash}, pro UNIX \emph{/opt/JCalc/}) a pojmenujte jej Calc.jar
+	\item Umístěte jar do složky, kde si přejete mít kalkulačku nainstalovánu (pro Windows například \emph{C:\textbackslash Program Files\textbackslash JCalc\textbackslash}, pro UNIX \emph{/opt/JCalc/}) a pojmenujte jej Calc.jar
 	\item Ve stejné složce vytvořte spouštěcí skript calc.\{sh | bat\} (podle Vašeho systému) s následujícím obsahem:\\
 		\subitem Pro UNIX systém:\\\\
 			\emph{\#!/bin/sh\\
@@ -70,7 +70,7 @@ Postup:
 			
 	\item V následujícím kroku vytvořte zástupce
 		\subitem pro UNIX:
-			\subsubitem Vytvořte textový soubor \emph{~/.local/share/applications/JCalc.desktop} a zkopírujte do něj:\\\\
+			\subsubitem Vytvořte textový soubor \emph{\textasciitilde/.local/share/applications/JCalc.desktop} a zkopírujte do něj:\\\\
 						\emph{
 						[Desktop Entry]\\
 						Type=Application\\
@@ -89,6 +89,25 @@ Postup:
 			
 	\item Pokud je aplikace funkční, můžete smazat složku se zdrojovými soubory
 \end{enumerate}
+
+\subsection{Manuální odinstalace}
+
+Pro odinstalování proveďte následující kroky:
+
+\begin{itemize}
+	\item pro UNIX:
+		\subitem Odstraňte všechny zástupce
+			\subsubitem Odstraňte manuálně zástupce z plochy, pokud existuje
+			\subsubitem Smažte soubor \emph{\textasciitilde/.local/share/applications/JCalc.desktop}
+			\subsubitem (můžete použít příkaz \emph{rm -f \textasciitilde/.local/share/applications/JCalc.desktop})
+		\subitem Odstraňte instalační složku programu. Ta je buďto \emph{/opt/JCalc}, nebo je v jiném adresáři, Vámi zvoleném během instalce
+			
+	\item pro Windows:
+		\subitem Pokud během odstraňování podržíte klávesu Shift, soubory se rovnou odstraní, jinak se přesonou do koše
+		\subitem Odstraňte všechny zástupce
+			\subsubitem Odstraňte zástupce z plochy a nabídky Start (klikněte na něj pravým tlačítkem a zvolte odstranit)
+		\subitem Smažte instalační složku. Ta je buďto \emph{C:\textbackslash Program Files\textbackslash JCalc}, nebo je v jiném adresáři, Vámi zvoleném během instalce
+\end{itemize}
 
 \section{Jak pracovat s programem}
 
