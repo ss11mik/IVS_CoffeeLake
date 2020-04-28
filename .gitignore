@@ -47,3 +47,5 @@ gradle-app.setting
 
 .idea
 src/.idea/workspace.xml
+
+*.iml
