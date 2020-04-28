@@ -15,6 +15,7 @@ test:
 
 doc:
 	doxygen
+	cd ../dokumentace/ && pdflatex dokumentace.tex && pdflatex dokumentace.tex	# double compilation for ToC generation
 
 run: jar
 	cd ../build/libs/ && java -jar *.jar
