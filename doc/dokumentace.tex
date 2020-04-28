@@ -40,16 +40,12 @@
 Aplikace \emph{JCalc} je multiplatformní kalkulačka se základními funkcemi, pamětí a možností řetězit operace.\\
 JCalc je licencován jako GPL3 (viz \emph{LICENCE.shtml v adresáři projektu}).
 
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=.7\textwidth]{../screenshot.png}
-\end{figure}
 
 \section{Instalace, odinstalace programu}
 
 \subsection{Manuální instalace}
 
-Pro manuální instalaci budete potřebovat:
+\textbf{Pro manuální instalaci budete potřebovat:}
 
 \begin{itemize}
 	\item (git) (pro stažení zdrojových souborů)
@@ -58,7 +54,8 @@ Pro manuální instalaci budete potřebovat:
 	\item GNU make
 \end{itemize}
 
-Postup:
+\noindent
+\textbf{Postup:}
 
 \begin{enumerate}
 	\item Stáhněte zdrojové soubory projektu: \emph{git clone TODO}
@@ -72,7 +69,7 @@ Postup:
 				java -jar Calc.jar}
 		\subitem Pro Windows systém:\\\\
 			\emph{java -jar Calc.jar}
-			
+
 	\item V následujícím kroku vytvořte zástupce
 		\subitem pro UNIX:
 			\subsubitem Vytvořte textový soubor \emph{\textasciitilde/.local/share/applications/JCalc.desktop} a zkopírujte do něj:\\\\
@@ -85,19 +82,19 @@ Postup:
 						}
 
 			\subsubitem Kde případně nahradíte cestu ke skriptu Vaší instalační cestou.
-			
+
 			\subsubitem Nyní byste měli najít zástupce JCalc ve spouštěči aplikací. Odtud si již jednoduše můžete umístit zástupce na plochu (konkrétní poustup je závislý na distribuci Vašeho OS, proto zde nejsou bližší instrukce)
-		
+
 		\subitem pro Windows:
 			\subsubitem klikněte pravým tlačítkem na \emph{calc.bat} a zvolte \emph{Vytvořit zástupce na ploše}
-			
-			
+
+
 	\item Pokud je aplikace funkční, můžete smazat složku se zdrojovými soubory
 \end{enumerate}
 
 \subsection{Manuální odinstalace}
 
-Pro odinstalování proveďte následující kroky:
+\textbf{Pro odinstalování proveďte následující kroky:}
 
 \begin{itemize}
 	\item pro UNIX:
@@ -106,7 +103,7 @@ Pro odinstalování proveďte následující kroky:
 			\subsubitem Smažte soubor \emph{\textasciitilde/.local/share/applications/JCalc.desktop}
 			\subsubitem (můžete použít příkaz \emph{rm -f \textasciitilde/.local/share/applications/JCalc.desktop})
 		\subitem Odstraňte instalační složku programu. Ta je buďto \emph{/opt/JCalc}, nebo je v jiném adresáři, Vámi zvoleném během instalce
-			
+
 	\item pro Windows:
 		\subitem Pokud během odstraňování podržíte klávesu Shift, soubory se rovnou odstraní, jinak se přesonou do koše
 		\subitem Odstraňte všechny zástupce
@@ -114,10 +111,63 @@ Pro odinstalování proveďte následující kroky:
 		\subitem Smažte instalační složku. Ta je buďto \emph{C:\textbackslash Program Files\textbackslash JCalc}, nebo je v jiném adresáři, Vámi zvoleném během instalce
 \end{itemize}
 
+\subsection{Klasická instalace/odinstalace}
+
+\textbf{Požadavky na systém:}
+
+\begin{itemize}
+    \item JDK - vyvíjeno na verzi 11
+\end{itemize}
+
+\noindent
+\textbf{Instalace:}
+
+\begin{enumerate}
+    \item Spusťte soubor \emph{install.bat} (resp. \emph{install.sh} pro UNIX)
+    \item Postupujte dle instalačního programu
+    \item Aplikaci spustíte souborem \emph{calc.bat}, který je v instalační složce (resp. \emph{calc.sh} pro UNIX)
+\end{enumerate}
+
+\noindent
+\textbf{Odinstalace:}
+
+\begin{enumerate}
+    \item Pro odinstalaci programu spusťte soubor \emph{uninstall.bat}, nacházející se ve složce s kalkulačkou (resp. \emph{uninstall.sh} pro UNIX)
+    \item Potvrďte odinstalaci aplikace
+\end{enumerate}
+
 \section{Jak pracovat s programem}
+
+\textbf{Seznam funkcí:}
+
+\begin{itemize}
+    \item Základní aritmetické operace (+ - x /)
+    \item Goniometrické funkce sinus a cosinus (sin() a cos())
+    \item Druhá mocnina a druhá odmocnina (tj. pow() a sqrt() v tomto pořadí)
+    \item Faktoriál přirozeného čísla (!)
+    \item Funkce modulo, tedy zbytek po celočíselném dělení (%)
+    \item Vyčištění obrazovky (Clear)
+    \item Vypočítat (Calculate)
+\end{itemize}
+
+\noindent
+\textbf{Vlastnosti aplikace:}
+
+\begin{itemize}
+    \item Kalkulačka pracuje s reálnými čísly
+    \item Operace se dají řetězit a mezi výpočty i s operacemi se zobrazují nad displejem
+\end{itemize}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=.7\textwidth]{../screenshot.png}
+\end{figure}
 
 \section{Závěr}
 
+Děkujeme, že jste si vybrali náš produkt.\\
+\\
+\noindent
 Vytvořili\\Marek Lohn,\\René Szotkowski a\\Ondřej Mikula\\\\jako projekt v předmětu IVS.\\\\
 FIT VUT, Brno, 2020.
 
