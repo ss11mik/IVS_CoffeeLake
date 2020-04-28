@@ -31,6 +31,54 @@
 
 \section{Instalace, odinstalace programu}
 
+\subsection{Manuální instalace}
+
+Pro manuální instalaci budete potřebovat:
+
+\begin{itemize}
+	\item (git) (pro stažení zdrojových souborů)
+	\item Gradle - vyvíjeno na verzi 5.2.1
+	\item JDK - vyvíjeno na verzi 11
+	\item GNU make
+\end{itemize}
+
+Postup:
+
+\begin{enumerate}
+	\item Stáhněte zdrojové soubory projektu: \emph{git clone TODO}
+	\item Přejděte do složky s projektem a následně do podsložky src/
+	\item Spusťte cíl \uv{jar}: \emph{make jar}
+	\item pokud byl překlad úspěšný, ve složce \emph{PROJEKT/build/libs} se nachází zkompilovaný jar soubor kalkulačky
+	\item Umístěte jar do složky, kde si přejete mít kalkulačku nainstalovánu (pro Windows například \emph{C:\textbackslash Program Files\textbackslash Calc\textbackslash}, pro UNIX \emph{/opt/JCalc/}) a pojmenujte jej Calc.jar
+	\item Ve stejné složce vytvořte spouštěcí skript calc.\{sh | bat\} (podle Vašeho systému) s následujícím obsahem:\\
+		\subitem Pro UNIX systém:\\\\
+			\emph{\#!/bin/sh\\
+				java -jar Calc.jar}
+		\subitem Pro Windows systém:\\\\
+			\emph{java -jar Calc.jar}
+			
+	\item V následujícím kroku vytvořte zástupce
+		\subitem pro UNIX:
+			\subsubitem Vytvořte textový soubor \emph{~/.local/share/applications/JCalc.desktop} a zkopírujte do něj:\\\\
+						\emph{
+						[Desktop Entry]\\
+						Type=Application\\
+						Terminal=false\\
+						Name=JCalc\\
+						Exec=/opt/JCalc/calc.sh\\
+						}
+
+			\subsubitem Kde případně nahradíte cestu ke skriptu Vaší instalační cestou.
+			
+			\subsubitem Nyní byste měli najít zástupce JCalc ve spouštěči aplikací. Odtud si již jednoduše můžete umístit zástupce na plochu (konkrétní poustup je závislý na distribuci Vašeho OS, proto zde nejsou bližší instrukce)
+		
+		\subitem pro Windows:
+			\subsubitem klikněte pravým tlačítkem na \emph{calc.bat} a zvolte \emph{Vytvořit zástupce na ploše}
+			
+			
+	\item Pokud je aplikace funkční, můžete smazat složku se zdrojovými soubory
+\end{enumerate}
+
 \section{Jak pracovat s programem}
 
 \section{Závěr}
