@@ -3,8 +3,10 @@
 all: build profile jar
 
 pack: clean
-	tar -zcf ../xlohnm00.tar.gz ../doc/ ../install/ main/ test/
-	# TODO include main, test, .git... files in repo/
+    mkdir ../repo
+    cp -rt ../repo ../.git ../mockup ../plan ../profiling ../src ../.gitignore ../editorconfig ../README.md ../debugging.png ../dokumentace.pdf ../hodnoceni.txt ../screenshot.png
+	tar -zcf ../xlohnm00.tar.gz ../doc/ ../install ../repo
+	rm -rf ../repo
 
 clean:
 	rm -rf html latex
