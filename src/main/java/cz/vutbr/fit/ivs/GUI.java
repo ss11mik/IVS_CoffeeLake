@@ -119,6 +119,7 @@ public class GUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent actionEvent){
                 display.calculateAndSetText();
+                display.resetMemory();
             }
         };
     }

@@ -36,6 +36,7 @@ public class Calculator extends JTextField {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
             calculateAndSetText();
+            resetMemory();
         }
     };
 
@@ -74,6 +75,14 @@ public class Calculator extends JTextField {
      */
     public void reset() {
         clear();
+        memory = 0;
+        operation = Operations.NONE;
+    }
+
+    /**
+     * Clears memory and operation
+     */
+    public void resetMemory() {
         memory = 0;
         operation = Operations.NONE;
     }
