@@ -1,0 +1,2 @@
+@echo off
+java -jar project2-1.0.jar
