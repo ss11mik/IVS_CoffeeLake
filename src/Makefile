@@ -2,7 +2,7 @@
 
 all: build profile jar
 
-pack:
+pack: clean
 	tar -zcf ../xlohnm00.tar.gz ../doc/ ../install/ main/ test/
 	# TODO include main, test, .git... files in repo/
 
