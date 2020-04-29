@@ -1,6 +1,7 @@
 ROOT = ../
 VERSION = 1.0
 EXECUTABLE = JCalc-$(VERSION).jar
+PROFILE_EXECUTABLE = JCalc-profile-$(VERSION).jar
 GRADLEW = cd $(ROOT) && ./gradlew
 TEX_GARBAGE = *.aux *.bib *.bbl *.blg *.log *.out *.run.xml *.synctex.gz *.toc
 TO_PACK =  .git/ mockup/ plan/ profiling/ src/ .gitignore .editorconfig README.md debugging.png dokumentace.pdf hodnoceni.txt skutecnost.txt screenshot.png
@@ -37,9 +38,7 @@ run: jar
 
 profile:
 	cd $(ROOT)profiling/ && ./inputGen.sh					#needs to first cd there, because it generates the files in current dir
-	$(GRADLEW) $(DONT_RUN_TESTS) $@ --args='profiling/10'
-	$(GRADLEW) $(DONT_RUN_TESTS) $@ --args='profiling/100'
-	$(GRADLEW) $(DONT_RUN_TESTS) $@ --args='profiling/1000'
+	$(GRADLEW) $(DONT_RUN_TESTS) $@
 
 
 
@@ -58,3 +57,8 @@ cleanNoDoc:				#so that pack can generate the docs and clean after, without dele
 	rm -f $(ROOT)$(PACKED).zip
 	rm -rf $(ROOT)repo/
 	rm -f $(ROOT)profiling/10 $(ROOT)profiling/100 $(ROOT)profiling/1000
+
+profile-run: profile
+	cd $(ROOT)build/libs/ && java -jar $(PROFILE_EXECUTABLE)  ../../profiling/10
+	cd $(ROOT)build/libs/ && java -jar $(PROFILE_EXECUTABLE)  ../../profiling/100
+	cd $(ROOT)build/libs/ && java -jar $(PROFILE_EXECUTABLE)  ../../profiling/1000

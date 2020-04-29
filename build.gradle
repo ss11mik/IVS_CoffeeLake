@@ -33,7 +33,13 @@ task(run, dependsOn: 'classes', type: JavaExec) {
    classpath = sourceSets.main.runtimeClasspath
 }
 
-task(profile, dependsOn: 'classes', type: JavaExec) {
-   main = 'cz.vutbr.fit.ivs.Profiling'
-   classpath = sourceSets.main.runtimeClasspath
+task(profile, dependsOn: 'classes', type: Jar) {
+    manifest {
+        attributes 'Implementation-Title': 'Profiling',
+        	'Implementation-Version': version,
+        	'Main-Class': 'cz.vutbr.fit.ivs.Profiling'
+    }
+    baseName = jar.baseName + '-profile'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
 }
