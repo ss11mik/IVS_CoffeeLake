@@ -30,6 +30,7 @@ public class Calculator extends JTextField {
         super();
         addActionListener(listener);
         format = NumberFormat.getNumberInstance(getLocale());
+        setHorizontalAlignment(JTextField.RIGHT);
     }
 
     ActionListener listener = new ActionListener() {
