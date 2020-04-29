@@ -14,6 +14,63 @@ public class CalculatorTests {
         calculator = new Calculator();
     }
 
+
+    @Test
+    public void testSequence() {
+        calculator.reset();
+        calculator.add("2");
+        calculator.add("+");
+        calculator.add("1");
+        calculator.calculateAndSetText();
+        calculator.resetMemory();
+        assertEquals(3, calculator.getValue(), TESTS_PRECISION);
+
+        calculator.add("+");
+        calculator.add("1");
+        calculator.calculateAndSetText();
+        calculator.resetMemory();
+        assertEquals(4, calculator.getValue(), TESTS_PRECISION);
+
+        calculator.add("-");
+        calculator.add("3");
+        calculator.calculateAndSetText();
+        calculator.resetMemory();
+        assertEquals(1, calculator.getValue(), TESTS_PRECISION);
+
+        calculator.add("*");
+        calculator.add("1");
+        calculator.add("0");
+        calculator.calculateAndSetText();
+        calculator.resetMemory();
+        assertEquals(10, calculator.getValue(), TESTS_PRECISION);
+    }
+
+    @Test
+    public void testInserting() {
+        calculator.reset();
+        for (int i = 8; i > 0; i--)
+            calculator.add(String.valueOf(i));
+
+        assertEquals(87654321, calculator.getValue(), TESTS_PRECISION);
+
+        calculator.add("+");
+        assertEquals(0, calculator.getValue(), TESTS_PRECISION);
+
+        calculator.add("1");
+        calculator.calculateAndSetText();
+        calculator.resetMemory();
+        assertEquals(87654322, calculator.getValue(), TESTS_PRECISION);
+
+        calculator.add("-");
+        assertEquals(0, calculator.getValue(), TESTS_PRECISION);
+
+        calculator.add("1");
+        calculator.add("0");
+        calculator.calculateAndSetText();
+        calculator.resetMemory();
+        assertEquals(87654312, calculator.getValue(), TESTS_PRECISION);
+    }
+
     @Test
     public void test2Operations1() {
         calculator.add("2");
@@ -23,7 +80,7 @@ public class CalculatorTests {
         calculator.add("2");
         calculator.add("=");
 
-        assertEquals(calculator.getValue(), 10, TESTS_PRECISION);
+        assertEquals(10, calculator.getValue(), TESTS_PRECISION);
     }
 
     @Test
@@ -35,7 +92,7 @@ public class CalculatorTests {
         calculator.add("3");
         calculator.add("=");
 
-        assertEquals(calculator.getValue(), 8, TESTS_PRECISION);
+        assertEquals(8, calculator.getValue(), TESTS_PRECISION);
     }
 
     @Test
@@ -47,7 +104,7 @@ public class CalculatorTests {
         calculator.add("10");
         calculator.add("=");
 
-        assertEquals(calculator.getValue(), 30, TESTS_PRECISION);
+        assertEquals(30, calculator.getValue(), TESTS_PRECISION);
     }
 
     @Test
@@ -59,7 +116,7 @@ public class CalculatorTests {
         calculator.add("10");
         calculator.add("=");
 
-        assertEquals(calculator.getValue(), 1000, TESTS_PRECISION);
+        assertEquals(1000, calculator.getValue(), TESTS_PRECISION);
     }
 
     @Test
@@ -73,6 +130,6 @@ public class CalculatorTests {
         calculator.add("2");
         calculator.add("=");
 
-        assertEquals(calculator.getValue(), 6, TESTS_PRECISION);
+        assertEquals(6, calculator.getValue(), TESTS_PRECISION);
     }
 }
