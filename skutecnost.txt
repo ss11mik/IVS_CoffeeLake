@@ -15,7 +15,7 @@ Přidělení úkolů:
 		-mockup - částečně splněno
 
 	René Szotkowski:
-		-dokumentace - splněno
+		-dokumentace - převzal a splnil ondra
 		-manuál - splněno
 		-Makefile - převzal a splnil ondra
 		-testy pro TDD - splněno
