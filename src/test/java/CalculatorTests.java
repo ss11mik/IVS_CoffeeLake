@@ -14,51 +14,6 @@ public class CalculatorTests {
         calculator = new Calculator();
     }
 
-
-    @Test
-    public void testSequence() {
-        calculator.add("2");
-        calculator.add("+");
-        calculator.add("1");
-        assertEquals(calculator.getValue(), 3, TESTS_PRECISION);
-
-        calculator.add("1");
-        calculator.calculateAndSetText();
-        assertEquals(calculator.getValue(), 12345679, TESTS_PRECISION);
-
-        calculator.add("-");
-        assertEquals(calculator.getValue(), 0, TESTS_PRECISION);
-
-        calculator.add("1");
-        calculator.add("0");
-        calculator.calculateAndSetText();
-        assertEquals(calculator.getValue(), 12345669, TESTS_PRECISION);
-    }
-
-    @Test
-    public void testInserting() {
-
-        for (int i = 8; i > 0; i--)
-            calculator.add(String.valueOf(i));
-
-        assertEquals(calculator.getValue(), 12345678, TESTS_PRECISION);
-
-        calculator.add("+");
-        assertEquals(calculator.getValue(), 0, TESTS_PRECISION);
-
-        calculator.add("1");
-        calculator.calculateAndSetText();
-        assertEquals(calculator.getValue(), 12345679, TESTS_PRECISION);
-
-        calculator.add("-");
-        assertEquals(calculator.getValue(), 0, TESTS_PRECISION);
-
-        calculator.add("1");
-        calculator.add("0");
-        calculator.calculateAndSetText();
-        assertEquals(calculator.getValue(), 12345669, TESTS_PRECISION);
-   }
-
     @Test
     public void test2Operations1() {
         calculator.add("2");
