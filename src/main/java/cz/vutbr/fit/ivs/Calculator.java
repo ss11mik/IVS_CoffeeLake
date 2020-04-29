@@ -157,6 +157,7 @@ public class Calculator extends JTextField {
                             break;
                         case '=':
                             calculateAndSetText();
+                            resetMemory();
                             break;
                         case '+':
                             clearAndCalculateToMemory();
