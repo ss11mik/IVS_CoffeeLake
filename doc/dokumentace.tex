@@ -21,14 +21,14 @@
 
 \usepackage{csquotes}
 
-\title{Dokumentace ke 2. projektu IVS}
+\title{Uživatelská okumentace ke 2. projektu IVS -- JCalc}
 \author{CoffeeLake}
 \date{\today}
 
 
 
 \begin{document}
-	
+
 \maketitle
 \tableofcontents
 
@@ -56,8 +56,9 @@ JCalc je licencován jako GPL3 (viz \emph{LICENCE.shtml} v adresáři projektu).
 
 \begin{enumerate}
     \item Spusťte soubor \emph{install.bat} (resp. \emph{install.sh} pro UNIX)
+    \subitem V Unixu musíte nejdříve přepsat instalační skript na spustitelný -> ve složce se skriptem spusťte např. příkaz \emph{chmod 555 install.sh}
     \item Postupujte dle instalačního programu
-    \item Aplikaci spustíte souborem \emph{jcalc.bat}, který je v instalační složce (resp. \emph{jcalc.sh} pro UNIX)
+    \item Aplikaci spustíte pomocí zástupce vytvořeného při instalaci \emph{JCalc}
 \end{enumerate}
 
 \noindent
@@ -84,12 +85,12 @@ JCalc je licencován jako GPL3 (viz \emph{LICENCE.shtml} v adresáři projektu).
 \textbf{Postup:}
 
 \begin{enumerate}
-	\item Stáhněte zdrojové soubory projektu: \emph{git clone TODO}
+	\item Stáhněte zdrojové soubory projektu: \emph{git clone \url{https://github.com/ss11mik/IVS_CoffeeLake.git}}
 	\item Přejděte do složky s projektem a následně do podsložky src/
 	\item Spusťte cíl \uv{jar}: \emph{make jar}
 	\item pokud byl překlad úspěšný, ve složce \emph{PROJEKT/build/libs} se nachází zkompilovaný jar soubor kalkulačky
-	\item Umístěte jar do složky, kde si přejete mít kalkulačku nainstalovánu (pro Windows například \emph{C:\textbackslash Program Files\textbackslash JCalc\textbackslash}, pro UNIX \emph{/opt/JCalc/}) a pojmenujte jej Calc.jar
-	\item Ve stejné složce vytvořte spouštěcí skript jcalc.\{sh | bat\} (podle Vašeho systému) s následujícím obsahem:\\
+	\item Umístěte jar do složky, kde si přejete mít kalkulačku nainstalovánu (pro Windows například \emph{C:\textbackslash Program Files\textbackslash JCalc\textbackslash}, pro UNIX \emph{/opt/JCalc/}) a pojmenujte jej JCalc.jar
+	\item Ve stejné složce vytvořte spouštěcí skript JCalc.\{sh | bat\} (podle Vašeho systému) s následujícím obsahem:\\
 		\subitem Pro UNIX systém:\\\\
 			\emph{\#!/bin/sh\\
 				java -jar JCalc.jar}
@@ -98,6 +99,7 @@ JCalc je licencován jako GPL3 (viz \emph{LICENCE.shtml} v adresáři projektu).
 
 	\item V následujícím kroku vytvořte zástupce
 		\subitem pro UNIX:
+		    \subsubitem Ve složce s projektem si zkopírujte soubor s ikonou icon.ico do složky s kalkulačkou
 			\subsubitem Vytvořte textový soubor \emph{\textasciitilde/.local/share/applications/JCalc.desktop} a zkopírujte do něj:\\\\
 						\emph{
 						[Desktop Entry]\\
@@ -105,14 +107,16 @@ JCalc je licencován jako GPL3 (viz \emph{LICENCE.shtml} v adresáři projektu).
 						Terminal=false\\
 						Name=JCalc\\
 						Exec=/opt/JCalc/jcalc.sh\\
+						Path=/opt/JCalc/\\
+						Icon=/opt/JCalc/icon.ico\\
 						}
 
-			\subsubitem Kde případně nahradíte cestu ke skriptu Vaší instalační cestou.
+			\subsubitem Kde případně nahradíte cesty Vaší instalační cestou.
 
-			\subsubitem Nyní byste měli najít zástupce JCalc ve spouštěči aplikací. Odtud si již jednoduše můžete umístit zástupce na plochu (konkrétní poustup je závislý na distribuci Vašeho OS, proto zde nejsou bližší instrukce)
+			\subsubitem Nyní byste měli najít zástupce JCalc ve spouštěči aplikací. Odtud si již jednoduše můžete umístit zástupce na plochu (konkrétní postup je závislý na distribuci Vašeho OS, proto zde nejsou bližší instrukce)
 
 		\subitem pro Windows:
-			\subsubitem klikněte pravým tlačítkem na \emph{calc.bat} a zvolte \emph{Vytvořit zástupce na ploše}
+			\subsubitem klikněte pravým tlačítkem na \emph{JCalc.bat} a zvolte \emph{Vytvořit zástupce na ploše}
 
 
 	\item Pokud je aplikace funkční, můžete smazat složku se zdrojovými soubory
@@ -128,13 +132,13 @@ JCalc je licencován jako GPL3 (viz \emph{LICENCE.shtml} v adresáři projektu).
 			\subsubitem Odstraňte manuálně zástupce z plochy, pokud existuje
 			\subsubitem Smažte soubor \emph{\textasciitilde/.local/share/applications/JCalc.desktop}
 			\subsubitem (můžete použít příkaz \emph{rm -f \textasciitilde/.local/share/applications/JCalc.desktop})
-		\subitem Odstraňte instalační složku programu. Ta je buďto \emph{/opt/JCalc}, nebo je v jiném adresáři, Vámi zvoleném během instalce
+		\subitem Odstraňte instalační složku programu. Ta je buďto \emph{/opt/JCalc}, nebo je v jiném adresáři, Vámi zvoleném během instalace
 
 	\item pro Windows:
-		\subitem Pokud během odstraňování podržíte klávesu Shift, soubory se rovnou odstraní, jinak se přesonou do koše
+		\subitem Pokud během odstraňování podržíte klávesu Shift, soubory se rovnou odstraní, jinak se přesunou do koše
 		\subitem Odstraňte všechny zástupce
 			\subsubitem Odstraňte zástupce z plochy a nabídky Start (klikněte na něj pravým tlačítkem a zvolte odstranit)
-		\subitem Smažte instalační složku. Ta je buďto \emph{C:\textbackslash Program Files\textbackslash JCalc}, nebo je v jiném adresáři, Vámi zvoleném během instalce
+		\subitem Smažte instalační složku. Ta je buďto \emph{C:\textbackslash Program Files\textbackslash JCalc}, nebo je v jiném adresáři, Vámi zvoleném během instalace
 \end{itemize}
 
 \section{Jak pracovat s programem}
@@ -147,9 +151,11 @@ JCalc je licencován jako GPL3 (viz \emph{LICENCE.shtml} v adresáři projektu).
     \item Celočíselná mocnina a celočíselná odmocnina (tj. $x^y$ a $\sqrt[y]{x}$ v tomto pořadí)
     \item Faktoriál přirozeného čísla ($x!$)
     \item Funkce modulo, tedy zbytek po celočíselném dělení ($x\%y$)
-    \item Náhodné celé nebo desetinné číslo z daného rozsahu
+    \item Náhodné celé nebo desetinné číslo z daného rozsahu (\emph{randI()} a \emph{randF()})
+    \item Vyčistění paměti (Reset)
     \item Vyčištění obrazovky (Clear)
     \item Vypočítat (Calculate)
+    \item Zobrazení nápovědy (Help)
 \end{itemize}
 
 \noindent
@@ -157,7 +163,7 @@ JCalc je licencován jako GPL3 (viz \emph{LICENCE.shtml} v adresáři projektu).
 
 \begin{itemize}
     \item Kalkulačka pracuje s reálnými čísly
-    \item Operace se dají řetězit% a mezi výpočty i s operacemi se zobrazují nad displejem %ehm, zatim ne
+    \item Operace se dají řetězit a mezi výpočet se zobrazuje nad displejem
 \end{itemize}
 
 \begin{figure}[ht]
@@ -179,7 +185,7 @@ Program je možné ovládat klávesnicí místo klikání na tlačítka na obraz
     $\#$ & odmocnina \\
     $\%$ & modulo \\
     $i$  & náhodné celé číslo \\
-    $r$  & náhodné destetinné číslo \\
+    $r$  & náhodné desetinné číslo \\
 \end{tabular}
 
 \section{Závěr}
