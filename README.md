@@ -6,6 +6,7 @@ Prostředí
 ---------
 
 - multiplatformní, běží v Javě
+- instalátory jsou dostupné pro GNU/Linux a Windows, na ostatních OS je možná manuální instalace
 - požadována Java rutime (JRE) na klientském PC (vyvinuto a testováno na verzi 11.0.6)
 
 Požadavky pro kompilaci
