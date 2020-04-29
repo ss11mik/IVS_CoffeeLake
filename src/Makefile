@@ -3,7 +3,7 @@ VERSION = 1.0
 EXECUTABLE = JCalc-$(VERSION).jar
 GRADLEW = cd $(ROOT) && ./gradlew
 TEX_GARBAGE = *.aux *.bib *.bbl *.blg *.log *.out *.run.xml *.synctex.gz *.toc
-TO_PACK =  .git/ mockup/ plan/ profiling/ src/ .gitignore .editorconfig README.md debugging.png dokumentace.pdf hodnoceni.txt screenshot.png
+TO_PACK =  .git/ mockup/ plan/ profiling/ src/ .gitignore .editorconfig README.md debugging.png dokumentace.pdf hodnoceni.txt skutecnost.txt screenshot.png
 PACKED = xlohnm00_xmikul69_xszotk07
 DONT_RUN_TESTS = -x test
 
