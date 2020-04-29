@@ -23,3 +23,15 @@ jar {
     )
   }
 }
+
+apply plugin: 'java'
+
+task(run, dependsOn: 'classes', type: JavaExec) {
+   main = 'cz.vutbr.fit.ivs.GUI'
+   classpath = sourceSets.main.runtimeClasspath
+}
+
+task(profile, dependsOn: 'classes', type: JavaExec) {
+   main = 'cz.vutbr.fit.ivs.Profiling'
+   classpath = sourceSets.main.runtimeClasspath
+}
