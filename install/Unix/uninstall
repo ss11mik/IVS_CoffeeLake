@@ -1,2 +1,3 @@
 #!/bin/sh
-java -jar Uninstaller\Uninstaller.jar
+java -jar Uninstaller/Uninstaller.jar
+
