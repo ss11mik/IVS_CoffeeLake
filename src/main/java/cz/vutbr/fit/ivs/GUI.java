@@ -38,16 +38,26 @@ public class GUI extends JFrame {
     private JButton buttonAdd;
     private JButton resetButton;
     private JButton buttonHelp;
+    private JButton buttonRandI;
+    private JButton buttonRandF;
 
+    /**
+     * Initializes all UI components
+     */
     private void init(){
         mainPanel = new JPanel();
-        mainPanel.setBackground(Color.white);
-        mainPanel.setForeground(Color.black);
-        mainPanel.setSize(647, 400);
-        mainPanel.setLayout(new GridLayout(6,1));
+        mainPanel.setBackground(Color.darkGray);
+        mainPanel.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
 
         memoryView = new JTextField();
+        memoryView.setEditable(false);
+        memoryView.setBackground(Color.black);
+        memoryView.setForeground(Color.white);
+        memoryView.setHorizontalAlignment(SwingConstants.RIGHT);
         display = new Calculator();
+        display.setBackground(Color.black);
+        display.setForeground(Color.white);
+
         buttonHelp = getButtonUI("Help");
         calcButton = getButtonUI("Calculate");
         clearButton = getButtonUI("Clear");
@@ -71,45 +81,111 @@ public class GUI extends JFrame {
         buttonSub = getButtonUI("-");
         buttonParentheses = getButtonUI(".");
         buttonAdd = getButtonUI("+");
+        buttonRandI = getButtonUI("randI( )");
+        buttonRandF = getButtonUI("randF()");
 
-        GridLayout row1 = new GridLayout(1,7);
-        mainPanel.add(memoryView);
-        mainPanel.add(buttonHelp);
+        JPanel row1 = new JPanel(new FlowLayout(FlowLayout.LEADING,5,0));
+        JPanel viewFields = new JPanel(new GridLayout(2,1,0,5));
+        JPanel buttonFields = new JPanel(new GridLayout(2,1,0,5));
 
-        mainPanel.add(display);
-        mainPanel.add(calcButton);
+        row1.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
+        row1.setBackground(Color.darkGray);
 
-        mainPanel.add(clearButton);
-        mainPanel.add(resetButton);
-        mainPanel.add(button7);
-        mainPanel.add(button8);
-        mainPanel.add(button9);
-        mainPanel.add(buttonDiv);
+        viewFields.setPreferredSize(new Dimension(500,80));
+        viewFields.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
+        viewFields.setBackground(Color.darkGray);
 
-        mainPanel.add(buttonSqrt);
-        mainPanel.add(buttonPow);
-        mainPanel.add(button4);
-        mainPanel.add(button5);
-        mainPanel.add(button6);
-        mainPanel.add(buttonMul);
+        buttonFields.setPreferredSize(new Dimension(100,80));
+        buttonFields.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
+        buttonFields.setBackground(Color.darkGray);
 
-        mainPanel.add(buttonFact);
-        mainPanel.add(buttonMod);
-        mainPanel.add(button1);
-        mainPanel.add(button2);
-        mainPanel.add(button3);
-        mainPanel.add(buttonSub);
+        viewFields.add(memoryView);
+        buttonFields.add(buttonHelp);
+        viewFields.add(display);
+        buttonFields.add(calcButton);
+        row1.add(viewFields);
+        row1.add(buttonFields);
+        mainPanel.add(row1);
 
-        mainPanel.add(button0);
-        mainPanel.add(buttonParentheses);
-        mainPanel.add(buttonAdd);
+        JPanel row2 = new JPanel(new FlowLayout(FlowLayout.LEADING,5,0));
+
+        row2.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
+        row2.setBackground(Color.darkGray);
+
+        JPanel col1 = getPanel();
+        JPanel col2 = getPanel();
+        JPanel col3 = getPanel();
+        JPanel col4 = getPanel();
+        JPanel col5 = getPanel();
+        JPanel col6 = getPanel();
+        JPanel col7 = getPanel();
+        col1.setPreferredSize(new Dimension(75,260));
+        col2.setPreferredSize(new Dimension(75,260));
+        col3.setPreferredSize(new Dimension(150,260));
+        col4.setPreferredSize(new Dimension(70,260));
+        col5.setPreferredSize(new Dimension(70,260));
+        col6.setPreferredSize(new Dimension(70,260));
+        col7.setPreferredSize(new Dimension(70,260));
+
+        col1.add(clearButton);
+        col2.add(resetButton);
+        col4.add(button7);
+        col5.add(button8);
+        col6.add(button9);
+        col7.add(buttonDiv);
+
+        col1.add(buttonSqrt);
+        col2.add(buttonPow);
+        col4.add(button4);
+        col5.add(button5);
+        col6.add(button6);
+        col7.add(buttonMul);
+
+        col1.add(buttonFact);
+        col2.add(buttonMod);
+        col4.add(button1);
+        col5.add(button2);
+        col6.add(button3);
+        col7.add(buttonSub);
+
+        col1.add(buttonRandF);
+        col2.add(buttonRandI);
+        col5.add(button0);
+        col6.add(buttonParentheses);
+        col7.add(buttonAdd);
+
+        row2.add(col1);
+        row2.add(col2);
+        row2.add(col3);
+        row2.add(col4);
+        row2.add(col5);
+        row2.add(col6);
+        row2.add(col7);
+        mainPanel.add(row2);
     }
 
+    /**
+     * @param tag Text on the button
+     * @return the basic setup for all buttons
+     */
     private JButton getButtonUI(String tag){
         JButton button = new JButton();
         button.setText(tag);
+        button.setBackground(Color.black);
+        button.setForeground(Color.white);
 
         return button;
+    }
+
+    /**
+     * @return the basic setup for column panel
+     */
+    private JPanel getPanel()
+    {
+        JPanel panel = new JPanel(new GridLayout(4,1,0,10));
+        panel.setBackground(Color.darkGray);
+
+        return panel;
     }
 
     /**
@@ -129,6 +205,7 @@ public class GUI extends JFrame {
         setSize(647, 400);
         init();
         setContentPane(mainPanel);
+        setResizable(false);
         setVisible(true);
 
         button0.addActionListener(getButtonListener("0"));
@@ -140,7 +217,7 @@ public class GUI extends JFrame {
         button6.addActionListener(getButtonListener("6"));
         button7.addActionListener(getButtonListener("7"));
         button8.addActionListener(getButtonListener("8"));
-        button9.addActionListener(getButtonListener("9"));/*
+        button9.addActionListener(getButtonListener("9"));
         buttonParentheses.addActionListener(getButtonListener("."));
         buttonFact.addActionListener(getOperationListener("!"));
         buttonAdd.addActionListener(getOperationListener("+"));
@@ -150,10 +227,12 @@ public class GUI extends JFrame {
         buttonMod.addActionListener(getOperationListener("%"));
         buttonPow.addActionListener(getOperationListener("^"));
         buttonSqrt.addActionListener(getOperationListener("#"));
+        buttonRandF.addActionListener(getOperationListener("r"));
+        buttonRandI.addActionListener(getOperationListener("i"));
         clearButton.addActionListener(getClearButtonListener());
         calcButton.addActionListener(getCalcButtonListener());
         resetButton.addActionListener(getResetButtonListener());
-        buttonHelp.addActionListener(getHelpButtonListener());*/
+        buttonHelp.addActionListener(getHelpButtonListener());
     }
 
     public ActionListener getButtonListener(String tag) {
