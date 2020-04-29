@@ -35,6 +35,8 @@ public class GUI extends JFrame {
     private JButton buttonMul;
     private JButton buttonSub;
     private JButton buttonAdd;
+    private JButton resetButton;
+    private JButton buttonHelp;
 
     /**
      * Entry point. Only initializes {@link GUI} class
@@ -43,14 +45,6 @@ public class GUI extends JFrame {
     public static void main(String [] args) {
         new GUI();
     }
-
-    //Display Listener for parsing text from display
-    ActionListener displayListener = new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent actionEvent) {
-
-        }
-    };
 
     /**
      * Constructor of GUI class.
@@ -62,7 +56,6 @@ public class GUI extends JFrame {
         setContentPane(mainPanel);
         setVisible(true);
 
-        display.addActionListener(displayListener);
         button0.addActionListener(getButtonListener("0"));
         button1.addActionListener(getButtonListener("1"));
         button2.addActionListener(getButtonListener("2"));
@@ -84,6 +77,8 @@ public class GUI extends JFrame {
         buttonSqrt.addActionListener(getOperationListener("#"));
         clearButton.addActionListener(getClearButtonListener());
         calcButton.addActionListener(getCalcButtonListener());
+        resetButton.addActionListener(getResetButtonListener());
+        buttonHelp.addActionListener(getHelpButtonListener());
     }
 
     public ActionListener getButtonListener(String tag) {
@@ -120,6 +115,24 @@ public class GUI extends JFrame {
             public void actionPerformed(ActionEvent actionEvent){
                 display.calculateAndSetText();
                 display.resetMemory();
+            }
+        };
+    }
+
+    public ActionListener getResetButtonListener() {
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent){
+                display.reset();
+            }
+        };
+    }
+
+    public ActionListener getHelpButtonListener() {
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent){
+                new HelpBox();
             }
         };
     }

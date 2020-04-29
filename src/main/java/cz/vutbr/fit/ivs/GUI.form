@@ -99,7 +99,7 @@
       </component>
       <component id="cfe9e" class="javax.swing.JButton" binding="clearButton" default-binding="true">
         <constraints>
-          <grid row="3" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Clear"/>
@@ -241,6 +241,22 @@
           </grid>
         </constraints>
       </hspacer>
+      <component id="11670" class="javax.swing.JButton" binding="resetButton">
+        <constraints>
+          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Reset"/>
+        </properties>
+      </component>
+      <component id="d0510" class="javax.swing.JButton" binding="buttonHelp">
+        <constraints>
+          <grid row="1" column="7" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Help"/>
+        </properties>
+      </component>
     </children>
   </grid>
 </form>
