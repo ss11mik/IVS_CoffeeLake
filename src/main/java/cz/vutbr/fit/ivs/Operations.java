@@ -15,4 +15,6 @@ public class Operations {
     public static final int FACT = 5;
     public static final int POW = 6;
     public static final int MOD = 7;
+    public static final int RANDI = 8;
+    public static final int RANDF = 9;
 }

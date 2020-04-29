@@ -197,6 +197,14 @@ public class Calculator extends JTextField {
                             clearAndCalculateToMemory();
                             operation = Operations.SQRT;
                             break;
+                        case 'r':
+                            clearAndCalculateToMemory();
+                            operation = Operations.RANDF;
+                            break;
+                        case 'i':
+                            clearAndCalculateToMemory();
+                            operation = Operations.RANDI;
+                            break;
                         default:
                     }
                 }

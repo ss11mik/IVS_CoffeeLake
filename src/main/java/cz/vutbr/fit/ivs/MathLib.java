@@ -35,6 +35,10 @@ public class MathLib {
                 return pow((long) a, (long) b);
             case Operations.MOD:
                 return mod(a, b);
+            case Operations.RANDI:
+                return randInt(b);
+            case Operations.RANDF:
+                return randFloat(b);
             default:
                 return b;
         }
@@ -138,5 +142,23 @@ public class MathLib {
      */
     public static double mod(double base, double modulator) {
         return base % modulator;
+    }
+
+    /**
+     * Generates random integer number from range <0;max>
+     * @param max highest value
+     * @return random int in range <0;max>
+     */
+    public static double randInt(double max) {
+        return Math.floor(Math.random() * max);
+    }
+
+    /**
+     * Generates random double number from range <0;max>
+     * @param max highest value
+     * @return andom double in range <0;max>
+     */
+    public static double randFloat(double max) {
+        return Math.random() * max;
     }
 }
