@@ -59,6 +59,6 @@ cleanNoDoc:				#so that pack can generate the docs and clean after, without dele
 	rm -f $(ROOT)profiling/10 $(ROOT)profiling/100 $(ROOT)profiling/1000
 
 profile-run: profile
-	cd $(ROOT)build/libs/ && java -jar $(PROFILE_EXECUTABLE)  ../../profiling/10
-	cd $(ROOT)build/libs/ && java -jar $(PROFILE_EXECUTABLE)  ../../profiling/100
-	cd $(ROOT)build/libs/ && java -jar $(PROFILE_EXECUTABLE)  ../../profiling/1000
+	cd $(ROOT)build/libs/ && java -jar $(PROFILE_EXECUTABLE) <  ../../profiling/10
+	cd $(ROOT)build/libs/ && java -jar $(PROFILE_EXECUTABLE) < ../../profiling/100
+	cd $(ROOT)build/libs/ && java -jar $(PROFILE_EXECUTABLE) < ../../profiling/1000

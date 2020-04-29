@@ -19,8 +19,6 @@ public class Profiling {
         List<Double> numbers = new ArrayList<Double>();
 
         try {
-            System.setIn(new FileInputStream(args[0]));
-
             // obtaining data
 
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
