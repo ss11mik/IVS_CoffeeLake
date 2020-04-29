@@ -1,4 +1,5 @@
 # JCalc
+![screenshot](icon.png)
 
 ![screenshot](screenshot.png)
 
