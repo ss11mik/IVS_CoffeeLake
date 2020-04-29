@@ -1,1 +1,41 @@
-tento soubor bude obsahovat rozdil mezi planem projektu a skutecnosti
+Termíny:
+	-zprovoznění IDE a repozitáře u všech členů týmu
+		18/03/20 - Menší zpoždění ale nic strašného
+	-dokončení testů pro TDD
+		25/03/20 - Splnili jsme včas
+	-dokončení prací na funkcionalitách
+		15/04/20 - Celková funkcionalita zprovozněna až 29.4
+
+
+Přidělení úkolů:
+	Marek Lohn:
+		-vedoucí - splněno
+		-frontend - splněno
+		-debugging - splněno
+		-mockup - částečně splněno
+
+	René Szotkowski:
+		-dokumentace - splněno
+		-manuál - splněno
+		-Makefile - převzal a splnil ondra
+		-testy pro TDD - splněno
+		-mockup - částečně splněno
+
+	Ondřej Mikula:
+		-bussiness logic - splněno
+		-instalátor - převzal a splnil rené
+		-mockup - částečně splněno
+		-profiling - splněno
+		-testování ve VirtualBoxu - převzal a splnil rené
+
+Komunikační kanály:
+	-Discord - splněno
+	-SMS - nebylo potřeba
+
+Pravidla pro komunikaci:
+	-každý pátek dopoledne každý podá report do dedikované roomky na Discordu - spíše nesplněno
+	-dodržování konvence pro komentáře v git commitech - spíše splněno
+
+Systém pro správu verzí: git - splněno
+
+Hosting: github - splněno
