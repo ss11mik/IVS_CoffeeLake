@@ -1,6 +1,7 @@
 package cz.vutbr.fit.ivs;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -38,6 +39,79 @@ public class GUI extends JFrame {
     private JButton resetButton;
     private JButton buttonHelp;
 
+    private void init(){
+        mainPanel = new JPanel();
+        mainPanel.setBackground(Color.white);
+        mainPanel.setForeground(Color.black);
+        mainPanel.setSize(647, 400);
+        mainPanel.setLayout(new GridLayout(6,1));
+
+        memoryView = new JTextField();
+        display = new Calculator();
+        buttonHelp = getButtonUI("Help");
+        calcButton = getButtonUI("Calculate");
+        clearButton = getButtonUI("Clear");
+        resetButton = getButtonUI("Reset");
+        button0 = getButtonUI("0");
+        button1 = getButtonUI("1");
+        button2 = getButtonUI("2");
+        button3 = getButtonUI("3");
+        button4 = getButtonUI("4");
+        button5 = getButtonUI("5");
+        button6 = getButtonUI("6");
+        button7 = getButtonUI("7");
+        button8 = getButtonUI("8");
+        button9 = getButtonUI("9");
+        buttonDiv = getButtonUI("/");
+        buttonMul = getButtonUI("x");
+        buttonSqrt = getButtonUI("sqrt( )");
+        buttonPow = getButtonUI("pow( )");
+        buttonFact = getButtonUI("!");
+        buttonMod = getButtonUI("%");
+        buttonSub = getButtonUI("-");
+        buttonParentheses = getButtonUI(".");
+        buttonAdd = getButtonUI("+");
+
+        GridLayout row1 = new GridLayout(1,7);
+        mainPanel.add(memoryView);
+        mainPanel.add(buttonHelp);
+
+        mainPanel.add(display);
+        mainPanel.add(calcButton);
+
+        mainPanel.add(clearButton);
+        mainPanel.add(resetButton);
+        mainPanel.add(button7);
+        mainPanel.add(button8);
+        mainPanel.add(button9);
+        mainPanel.add(buttonDiv);
+
+        mainPanel.add(buttonSqrt);
+        mainPanel.add(buttonPow);
+        mainPanel.add(button4);
+        mainPanel.add(button5);
+        mainPanel.add(button6);
+        mainPanel.add(buttonMul);
+
+        mainPanel.add(buttonFact);
+        mainPanel.add(buttonMod);
+        mainPanel.add(button1);
+        mainPanel.add(button2);
+        mainPanel.add(button3);
+        mainPanel.add(buttonSub);
+
+        mainPanel.add(button0);
+        mainPanel.add(buttonParentheses);
+        mainPanel.add(buttonAdd);
+    }
+
+    private JButton getButtonUI(String tag){
+        JButton button = new JButton();
+        button.setText(tag);
+
+        return button;
+    }
+
     /**
      * Entry point. Only initializes {@link GUI} class
      * @param args not used
@@ -53,6 +127,7 @@ public class GUI extends JFrame {
     public GUI() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(647, 400);
+        init();
         setContentPane(mainPanel);
         setVisible(true);
 
@@ -65,7 +140,7 @@ public class GUI extends JFrame {
         button6.addActionListener(getButtonListener("6"));
         button7.addActionListener(getButtonListener("7"));
         button8.addActionListener(getButtonListener("8"));
-        button9.addActionListener(getButtonListener("9"));
+        button9.addActionListener(getButtonListener("9"));/*
         buttonParentheses.addActionListener(getButtonListener("."));
         buttonFact.addActionListener(getOperationListener("!"));
         buttonAdd.addActionListener(getOperationListener("+"));
@@ -78,7 +153,7 @@ public class GUI extends JFrame {
         clearButton.addActionListener(getClearButtonListener());
         calcButton.addActionListener(getCalcButtonListener());
         resetButton.addActionListener(getResetButtonListener());
-        buttonHelp.addActionListener(getHelpButtonListener());
+        buttonHelp.addActionListener(getHelpButtonListener());*/
     }
 
     public ActionListener getButtonListener(String tag) {
