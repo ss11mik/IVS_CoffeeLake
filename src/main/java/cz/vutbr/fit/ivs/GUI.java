@@ -119,9 +119,9 @@ public class GUI extends JFrame {
         JPanel col5 = getPanel();
         JPanel col6 = getPanel();
         JPanel col7 = getPanel();
-        col1.setPreferredSize(new Dimension(85,260));
-        col2.setPreferredSize(new Dimension(85,260));
-        col3.setPreferredSize(new Dimension(140,260));
+        col1.setPreferredSize(new Dimension(90,260));
+        col2.setPreferredSize(new Dimension(90,260));
+        col3.setPreferredSize(new Dimension(135,260));
         col4.setPreferredSize(new Dimension(70,260));
         col5.setPreferredSize(new Dimension(70,260));
         col6.setPreferredSize(new Dimension(70,260));
