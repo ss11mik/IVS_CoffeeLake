@@ -30,8 +30,8 @@ test:
 
 doc:
 	doxygen
-	cd $(ROOT)doc/ && pdflatex dokumentace.tex && pdflatex dokumentace.tex && mv dokumentace.pdf $(ROOT)	# double compilation for ToC generation
-	cd $(ROOT)profiling/report/ && pdflatex zprava.tex && mv zprava.pdf $(ROOT)
+	cd $(ROOT)doc/ && pdflatex *.tex && pdflatex *.tex && mv *.pdf $(ROOT)	# double compilation for ToC generation
+	cd $(ROOT)profiling/report/ && pdflatex *.tex && mv *.pdf $(ROOT)
 
 run: jar
 	cd $(ROOT)build/libs/ && java -jar $(EXECUTABLE)
