@@ -82,7 +82,7 @@ public class GUI extends JFrame {
         buttonParentheses = getButtonUI(".");
         buttonAdd = getButtonUI("+");
         buttonRandI = getButtonUI("randI( )");
-        buttonRandF = getButtonUI("randF()");
+        buttonRandF = getButtonUI("randF( )");
 
         JPanel row1 = new JPanel(new FlowLayout(FlowLayout.LEADING,5,0));
         JPanel viewFields = new JPanel(new GridLayout(2,1,0,5));
@@ -119,9 +119,9 @@ public class GUI extends JFrame {
         JPanel col5 = getPanel();
         JPanel col6 = getPanel();
         JPanel col7 = getPanel();
-        col1.setPreferredSize(new Dimension(75,260));
-        col2.setPreferredSize(new Dimension(75,260));
-        col3.setPreferredSize(new Dimension(150,260));
+        col1.setPreferredSize(new Dimension(85,260));
+        col2.setPreferredSize(new Dimension(85,260));
+        col3.setPreferredSize(new Dimension(140,260));
         col4.setPreferredSize(new Dimension(70,260));
         col5.setPreferredSize(new Dimension(70,260));
         col6.setPreferredSize(new Dimension(70,260));
