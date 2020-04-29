@@ -132,7 +132,7 @@ public class GUI extends JFrame {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent){
-                new HelpBox();
+                JOptionPane.showMessageDialog(mainPanel, "To work with this calculator you can either use buttons\n or write inside the text field using coresponding keybinds.\n\nKeyBind: \n\t0-9 to instert numbers \n\t. to insert floating point \n\tEnter to calculate \n\t+-*/ for some basic operations \n\t^ power \n\t# square root \n\t% modulus");
             }
         };
     }
