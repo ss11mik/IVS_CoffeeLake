@@ -57,7 +57,7 @@ JCalc je licencován jako GPL3 (viz \emph{LICENCE.shtml} v adresáři projektu).
 \begin{enumerate}
     \item Spusťte soubor \emph{install.bat} (resp. \emph{install.sh} pro UNIX)
     \item Postupujte dle instalačního programu
-    \item Aplikaci spustíte souborem \emph{calc.bat}, který je v instalační složce (resp. \emph{calc.sh} pro UNIX)
+    \item Aplikaci spustíte souborem \emph{jcalc.bat}, který je v instalační složce (resp. \emph{jcalc.sh} pro UNIX)
 \end{enumerate}
 
 \noindent
@@ -89,12 +89,12 @@ JCalc je licencován jako GPL3 (viz \emph{LICENCE.shtml} v adresáři projektu).
 	\item Spusťte cíl \uv{jar}: \emph{make jar}
 	\item pokud byl překlad úspěšný, ve složce \emph{PROJEKT/build/libs} se nachází zkompilovaný jar soubor kalkulačky
 	\item Umístěte jar do složky, kde si přejete mít kalkulačku nainstalovánu (pro Windows například \emph{C:\textbackslash Program Files\textbackslash JCalc\textbackslash}, pro UNIX \emph{/opt/JCalc/}) a pojmenujte jej Calc.jar
-	\item Ve stejné složce vytvořte spouštěcí skript calc.\{sh | bat\} (podle Vašeho systému) s následujícím obsahem:\\
+	\item Ve stejné složce vytvořte spouštěcí skript jcalc.\{sh | bat\} (podle Vašeho systému) s následujícím obsahem:\\
 		\subitem Pro UNIX systém:\\\\
 			\emph{\#!/bin/sh\\
-				java -jar Calc.jar}
+				java -jar JCalc.jar}
 		\subitem Pro Windows systém:\\\\
-			\emph{java -jar Calc.jar}
+			\emph{java -jar JCalc.jar}
 
 	\item V následujícím kroku vytvořte zástupce
 		\subitem pro UNIX:
@@ -104,7 +104,7 @@ JCalc je licencován jako GPL3 (viz \emph{LICENCE.shtml} v adresáři projektu).
 						Type=Application\\
 						Terminal=false\\
 						Name=JCalc\\
-						Exec=/opt/JCalc/calc.sh\\
+						Exec=/opt/JCalc/jcalc.sh\\
 						}
 
 			\subsubitem Kde případně nahradíte cestu ke skriptu Vaší instalační cestou.

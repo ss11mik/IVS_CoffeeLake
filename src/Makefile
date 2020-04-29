@@ -1,4 +1,6 @@
 ROOT = ../
+VERSION = 1.0
+EXECUTABLE = JCalc-$(VERSION).jar
 GRADLEW = cd $(ROOT) && ./gradlew
 TEX_GARBAGE = *.aux *.bib *.bbl *.blg *.log *.out *.run.xml *.synctex.gz *.toc
 TO_PACK =  .git/ mockup/ plan/ profiling/ src/ .gitignore .editorconfig README.md debugging.png dokumentace.pdf hodnoceni.txt screenshot.png
@@ -31,7 +33,7 @@ doc:
 	cd $(ROOT)profiling/report/ && pdflatex zprava.tex && mv zprava.pdf $(ROOT)
 
 run: jar
-	cd $(ROOT)build/libs/ && java -jar *.jar
+	cd $(ROOT)build/libs/ && java -jar $(EXECUTABLE)
 
 profile:
 	cd $(ROOT)profiling/ && ./inputGen.sh					#needs to first cd there, because it generates the files in current dir
@@ -46,6 +48,8 @@ build:
 
 jar:
 	$(GRADLEW) $@ $(DONT_RUN_TESTS)
+	cp $(ROOT)build/libs/$(EXECUTABLE) $(ROOT)install/Unix/bin/JCalc.jar
+	cp $(ROOT)build/libs/$(EXECUTABLE) $(ROOT)install/Windows/bin/JCalc.jar
 
 cleanNoDoc:				#so that pack can generate the docs and clean after, without deleting Javadocs
 	$(GRADLEW) clean

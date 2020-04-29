@@ -5,6 +5,8 @@ plugins {
 group 'cz.vutbr.fit.ivs'
 version '1.0'
 
+jar.baseName = 'JCalc'
+
 sourceCompatibility = 1.8
 
 repositories {

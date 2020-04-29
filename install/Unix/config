@@ -1,2 +1,2 @@
 #!/bin/sh
-java -jar Calc.jar
+java -jar JCalc.jar
