@@ -30,14 +30,12 @@ test:
 
 doc:
 	doxygen
-	cd $(ROOT)doc/ && pdflatex *.tex && pdflatex *.tex && mv *.pdf $(ROOT)	# double compilation for ToC generation
-	cd $(ROOT)profiling/report/ && pdflatex *.tex && mv *.pdf $(ROOT)
 
 run: jar
 	cd $(ROOT)build/libs/ && java -jar $(EXECUTABLE)
 
 profile:
-	cd $(ROOT)profiling/ && ./inputGen.sh					#needs to first cd there, because it generates the files in current dir
+	cd $(ROOT)profiling/ && ./inputGen.sh
 	$(GRADLEW) $(DONT_RUN_TESTS) $@
 
 
@@ -47,8 +45,6 @@ build:
 
 jar:
 	$(GRADLEW) $@ $(DONT_RUN_TESTS)
-	cp $(ROOT)build/libs/$(EXECUTABLE) $(ROOT)install/Unix/bin/JCalc.jar
-	cp $(ROOT)build/libs/$(EXECUTABLE) $(ROOT)install/Windows/bin/JCalc.jar
 
 cleanNoDoc:				#so that pack can generate the docs and clean after, without deleting Javadocs
 	$(GRADLEW) clean
