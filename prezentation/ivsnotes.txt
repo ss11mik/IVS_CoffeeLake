@@ -1,0 +1,59 @@
+Kapitoly
+
+Krátký úvod produktu
+
+Problémy trochu té historie potíží ne všechny - GIT, Java, domluva, soužití členů
+
+Nabyté zkušenosti
+
+Komunikace
+
+
+Obrázek s funkcemi popsat jak to funguje
+
+Zavřít prezentaci až při odcházení
+
+číslování slidů
+
+Seznámit se s produktem pořádně
+
+nedostatečný mockup
+
+manuál
+--------------------------------------------------Actual Structure
+
+Úvod - Tým CoffeeLake (chtělo by to pěknou ikonku)
+Produkt Jcalc
+Popis: Minimalistická kalkulačka se základními funkcemi
+Jazyk: Java
+GUI: Java Swing
+End of Page
+
+Jcalc - funkcionalita
+(Zde budou obrázky z Jcalc a pár funkcí jako example)
+Násobení
+Faktoriál
+End of Page
+
+Mockup Jcalc
+Graphické zobrazení funkcí
+Nové kunkce
+(Obrázek Mockupu)
+End of Page
+
+CoffeeLake tým
+Marek Lohn - GUI
+Ondra Mikula - Funkcionalita
+René Szotkowski - Instalátor, dokumentace
+End of Page
+
+Problémy
+Rychlý začátek, pomalé dokončení, neaktivita týmu
+Rozpor o funkcionalitě
+Works fine on my machine - GUI
+
+Získané zkušenosti
+Více termínů, striktnější dodržení
+Kompromisy
+Testovat celkovou funkčnost co nejdříve to jde
+End of Page

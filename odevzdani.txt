@@ -1,0 +1,2 @@
+30.4.2020 5:46AM kompletní archiv odevzdán do pžadované složky na serveru ivs.fit.vutbr.cz
+obsahuje dokumentaci, source code, profiling, mockup a instalátory
